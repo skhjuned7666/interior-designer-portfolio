@@ -475,16 +475,6 @@ section{
     overflow: hidden;
 }
 
-/* .intro, .outro{
-    text-align: center;
-    align-content: center;
-}
-
-.intro h1, .outro h1{
-    width: 30%;
-    margin: 0 auto;
-}
-     */
 .sticky{
     display: flex;
     justify-content: center;
@@ -573,10 +563,6 @@ section{
 @media(max-width:1000px){
     h1 {
         font-size: 3rem;
-    }
-
-    .intro h1, .outro h1{
-        width: 100%;
     }
     .sticky{
         height: max-content;
@@ -915,20 +901,6 @@ footer {
     margin-top: 40px;
 }
 
-.footer-meta {
-    position: absolute;
-    right: 60px;
-    bottom: 160px;
-    text-align: left;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.footer-meta.right {
-    right: 60px;
-    bottom: 120px;
-    text-align: right;
-}
 
 /* --------------------
    Oversized Typography
@@ -961,11 +933,6 @@ footer {
 
     .footer-top {
         grid-template-columns: 1fr;
-    }
-
-    .footer-meta {
-        position: static;
-        margin-top: 40px;
     }
 
     .footer-brand {
@@ -1010,53 +977,6 @@ footer {
     letter-spacing: 1px;
 }
 
-/* Portfolio Section */
-.portfolio-section {
-    padding: 100px 3vw 0;
-    background-color: #fff;
-    position: relative;
-}
-
-.portfolio-header {
-    text-align: center;
-    margin-bottom: 80px;
-}
-
-.portfolio-header h2 {
-    font-family: 'hehe', sans-serif;
-    font-size: 4rem;
-    font-weight: 500;
-    color: #2f2f2f;
-    margin-bottom: 20px;
-}
-
-.portfolio-header p {
-    font-size: 1.2rem;
-    color: #666;
-    font-weight: 300;
-}
-
-/* Portfolio Grid - Old Grid (kept for reference) */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 60px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-/* ScrollSmoother Wrapper */
-#smooth-wrapper {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-
-#smooth-content {
-    overflow: visible;
-    width: 100%;
-    will-change: transform;
-}
 
 /* Work Panels Wrapper */
 .work-panels-wrapper {
@@ -1587,26 +1507,6 @@ body:has(.work-panels-wrapper) footer {
     }
 }
 
-.panel-1 {
-    background: linear-gradient(135deg, #1a1525 0%, #0f0a18 100%);
-}
-
-.panel-2 {
-    background: linear-gradient(135deg, #151a25 0%, #0a0f18 100%);
-}
-
-.panel-3 {
-    background: linear-gradient(135deg, #251a15 0%, #180f0a 100%);
-}
-
-.panel-4 {
-    background: linear-gradient(135deg, #15251a 0%, #0a180f 100%);
-}
-
-.panel-5 {
-    background: linear-gradient(135deg, #251520 0%, #180a0f 100%);
-}
-
 .panel-content {
     max-width: 1200px;
     width: 90%;
@@ -1772,15 +1672,6 @@ body:has(.work-panels-wrapper) footer {
         font-size: 12vw;
     }
     
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    
-    .portfolio-header h2 {
-        font-size: 2.5rem;
-    }
-    
     .panel-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -1810,18 +1701,6 @@ body:has(.work-panels-wrapper) footer {
 }
 
 @media (max-width: 500px) {
-    .work-hero {
-        padding: 100px 2vw 60px;
-    }
-    
-    .portfolio-section {
-        padding: 60px 2vw;
-    }
-    
-    .portfolio-header {
-        margin-bottom: 50px;
-    }
-    
     .panel-content {
         padding: 20px;
         gap: 30px;
@@ -2010,233 +1889,6 @@ body:has(.work-panels-wrapper) footer {
     line-height: 1.6;
 }
 
-.about-approach {
-    padding: 100px 3vw;
-    background: #fff;
-}
-
-.approach-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.approach-content h2 {
-    font-family: 'hehe', sans-serif;
-    font-size: 3rem;
-    font-weight: 500;
-    color: #2f2f2f;
-    margin-bottom: 30px;
-}
-
-.approach-content p {
-    font-size: 1.1rem;
-    color: #666;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-
-.approach-image {
-    width: 100%;
-    height: 500px;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.approach-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* ============================================
-   Services Page Styles - Unique Design
-   ============================================ */
-
-.services-hero {
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #ff5f38 0%, #ff8c69 100%);
-    color: #fff;
-    padding: 120px 3vw 80px;
-    margin-top: 80px;
-    text-align: center;
-}
-
-.services-hero-content {
-    max-width: 800px;
-}
-
-.services-hero-title {
-    font-family: 'nb', sans-serif;
-    font-size: 6vw;
-    font-weight: 300;
-    margin-bottom: 20px;
-    line-height: 1.1;
-}
-
-.services-hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 300;
-    opacity: 0.9;
-}
-
-.services-main {
-    padding: 100px 3vw;
-    background: #fff;
-}
-
-.services-main-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.services-list {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-}
-
-.service-item-large {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 40px;
-    padding: 60px;
-    background: #f8f8f8;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
-}
-
-.service-item-large:hover {
-    transform: translateX(10px);
-}
-
-.service-number {
-    font-family: 'nb', sans-serif;
-    font-size: 4rem;
-    font-weight: 300;
-    color: #ff5f38;
-}
-
-.service-details h3 {
-    font-family: 'hehe', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 500;
-    color: #2f2f2f;
-    margin-bottom: 20px;
-}
-
-.service-details p {
-    font-size: 1.1rem;
-    color: #666;
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-
-.service-features {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-}
-
-.service-features li {
-    font-size: 1rem;
-    color: #2f2f2f;
-    padding-left: 25px;
-    position: relative;
-}
-
-.service-features li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: #ff5f38;
-}
-
-.services-process {
-    padding: 100px 3vw;
-    background: #2f2f2f;
-    color: #fff;
-}
-
-.process-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.process-container .section-title {
-    color: #fff;
-}
-
-.process-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-}
-
-.process-step {
-    text-align: center;
-    padding: 40px 20px;
-}
-
-.step-number {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: #ff5f38;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'nb', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 300;
-    margin: 0 auto 25px;
-}
-
-.process-step h3 {
-    font-family: 'hehe', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 15px;
-}
-
-.process-step p {
-    font-size: 1rem;
-    color: #ccc;
-    line-height: 1.6;
-}
-
-.services-cta {
-    padding: 100px 3vw;
-    background: #f5f5f5;
-    text-align: center;
-}
-
-.services-cta-content {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.services-cta-content h2 {
-    font-family: 'hehe', sans-serif;
-    font-size: 3rem;
-    font-weight: 500;
-    color: #2f2f2f;
-    margin-bottom: 20px;
-}
-
-.services-cta-content p {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 40px;
-}
 
 /* ============================================
    Contact Page Styles - Unique Design
@@ -2407,26 +2059,12 @@ body:has(.work-panels-wrapper) footer {
 /* Responsive Styles for About, Services, Contact */
 @media (max-width: 900px) {
     .about-hero-title,
-    .services-hero-title,
     .contact-hero-title {
         font-size: 10vw;
     }
     
     .section-title {
         font-size: 2.5rem;
-    }
-    
-    .approach-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .service-item-large {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .service-features {
-        grid-template-columns: 1fr;
     }
     
     .contact-container {
@@ -2441,28 +2079,18 @@ body:has(.work-panels-wrapper) footer {
 
 @media (max-width: 500px) {
     .about-hero,
-    .services-hero,
     .contact-hero {
         padding: 100px 2vw 60px;
     }
     
     .about-values,
     .about-timeline,
-    .about-approach,
-    .services-main,
-    .services-process,
-    .services-cta,
     .contact-main {
         padding: 60px 2vw;
     }
     
-    .values-grid,
-    .process-steps {
+    .values-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .service-item-large {
-        padding: 40px 30px;
     }
 }
 
