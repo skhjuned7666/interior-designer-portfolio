@@ -193,17 +193,6 @@ Edit CSS variables in `style.css`:
 ## 🤝 Contributing
 
 This is a portfolio project. For suggestions or improvements, please create an issue or pull request.
-
-## 📄 License
-
-© 2024 H9Y Studio. All rights reserved.
-
-## 📧 Contact
-
-**H9Y Studio**  
-New Business: harain.designoltre@gmail.com  
-Locations: San Diego-USA, Paris-France
-
 ---
 
 **Built with ❤️ using GSAP, Lenis, and modern web technologies**
