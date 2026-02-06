@@ -615,33 +615,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     portfolioTransitionController = initPortfolioTransition();
 
-    // Work page – portfolio cards scroll‑reveal animation
-    function initPortfolioCardScrollReveal() {
-        const portfolioSection = document.getElementById('portfolio');
-        if (!portfolioSection || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-
-        const cards = portfolioSection.querySelectorAll('.portfolio-card');
-        if (!cards.length) return;
-
-        // Initial state
-        gsap.set(cards, { opacity: 0, y: 50 });
-
-        // Staggered reveal for a subtle cinematic entrance
-        gsap.to(cards, {
-            opacity: 1,
-            y: 0,
-            duration: 0.9,
-            ease: 'power3.out',
-            stagger: 0.12,
-            scrollTrigger: {
-                trigger: portfolioSection,
-                start: 'top 75%',
-                end: 'bottom 60%',
-                toggleActions: 'play none none reverse'
-            }
-        });
-    }
-
     // Portfolio cards: open details in modal on click (with transition)
     function initPortfolioModal() {
         const cards = document.querySelectorAll('.portfolio-card');
@@ -751,10 +724,118 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    initPortfolioCardScrollReveal();
     initPortfolioModal();
 
+    // Work page: scroll-based animation for portfolio cards
+    function initWorkPortfolioScrollAnimation() {
+        const portfolioSection = document.getElementById('portfolio');
+        if (!portfolioSection || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+        const cardWrappers = gsap.utils.toArray('#portfolio .project-wrap');
+        if (!cardWrappers.length) return;
+
+        // Simple text splitter (chars only) – lightweight alternative to SplitText
+        function splitHeadingToChars(headingEl) {
+            const text = headingEl.textContent || '';
+            const chars = [];
+            headingEl.textContent = '';
+
+            for (let i = 0; i < text.length; i++) {
+                const span = document.createElement('span');
+                span.classList.add('card-title-char');
+                span.textContent = text[i];
+                headingEl.appendChild(span);
+                chars.push(span);
+            }
+            return chars;
+        }
+
+        cardWrappers.forEach((wrap, index) => {
+            const card = wrap.querySelector('.portfolio-card');
+            const title = wrap.querySelector('.card-title');
+            const image = wrap.querySelector('.card-image img');
+
+            if (!card || !title) return;
+
+            const chars = splitHeadingToChars(title);
+            const isLastCard = index === cardWrappers.length - 1;
+
+            // Initial state
+            gsap.set(card, { opacity: 0, y: 80 });
+            gsap.set(chars, { autoAlpha: 0, yPercent: 150 });
+            if (image) {
+                gsap.set(image, { scale: 1.05, yPercent: 10 });
+            }
+
+            // Main entry + dwell animation (pin all except last card)
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: wrap,
+                    // Align the vertical center of the wrapper with the viewport center
+                    start: 'center center',
+                    // Keep non‑last cards pinned for roughly one viewport of scroll
+                    end: isLastCard ? '+=60%' : '+=100%',
+                    pin: !isLastCard,
+                    // Don't add extra space after each pinned card – prevents white gaps between cards
+                    pinSpacing: !isLastCard ? false : true,
+                    scrub: false,
+                    toggleActions: 'play reverse play reverse'
+                },
+                defaults: { ease: 'power2.out' }
+            })
+                .to(card, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.9
+                })
+                .to(
+                    chars,
+                    {
+                        autoAlpha: 1,
+                        yPercent: 0,
+                        duration: 0.9,
+                        stagger: { each: 0.018, from: 'random' }
+                    },
+                    0.1
+                )
+                .to(
+                    image || {},
+                    {
+                        scale: image ? 1 : undefined,
+                        yPercent: image ? 0 : undefined,
+                        duration: image ? 1.1 : 0
+                    },
+                    0
+                );
+
+            // Soft fade-out when leaving the focus area
+            ScrollTrigger.create({
+                trigger: wrap,
+                start: 'center center',
+                end: isLastCard ? 'center top' : 'bottom top',
+                onLeave: () => {
+                    gsap.to(card, {
+                        opacity: 0,
+                        y: -80,
+                        duration: 0.6,
+                        ease: 'power2.inOut'
+                    });
+                },
+                onEnterBack: () => {
+                    gsap.to(card, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.6,
+                        ease: 'power2.out'
+                    });
+                }
+            });
+        });
+    }
+
+    initWorkPortfolioScrollAnimation();
+
     // Horizontal scroll portfolio section for Work page
-    // Disabled: cards are now shown in a static grid without scroll animation
+    // Disabled: cards are now shown in a static layout without horizontal scroll
     // (kept here commented for reference if needed in future)
 });
