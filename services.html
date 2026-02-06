@@ -183,6 +183,9 @@
             const slides = gsap.utils.toArray(".slide");
 
             if (listItems.length > 0 && slides.length > 0) {
+                // initial state: all slides hidden & slightly zoomed out
+                gsap.set(slides, { autoAlpha: 0, scale: 0.2, y: 10 });
+
                 const tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: ".pin-section",
@@ -205,26 +208,33 @@
                     const previousItem = listItems[i - 1];
                     if (previousItem) {
                         tl.set(item, { color: "#ff5f38" }, 0.5 * i)
-                            .to(
-                                slides[i],
-                                {
-                                    autoAlpha: 1,
-                                    duration: 0.2
-                                },
-                                "<"
-                            )
-                            .set(previousItem, { color: "#666" }, "<")
-                            .to(
-                                slides[i - 1],
-                                {
-                                    autoAlpha: 0,
-                                    duration: 0.2
-                                },
-                                "<"
-                            );
+                          .fromTo(
+                              slides[i],
+                              { autoAlpha: 0, scale: 0.8, y: 30 },
+                              {
+                                  autoAlpha: 1,
+                                  scale: 1,
+                                  y: 0,
+                                  duration: 0.45,
+                                  ease: "power3.out"
+                              },
+                              "<"
+                          )
+                          .set(previousItem, { color: "#666" }, "<")
+                          .to(
+                              slides[i - 1],
+                              {
+                                  autoAlpha: 0,
+                                  scale: 0.8,
+                                  y: -20,
+                                  duration: 0.4,
+                                  ease: "power3.inOut"
+                              },
+                              "<"
+                          );
                     } else {
                         gsap.set(item, { color: "#ff5f38" });
-                        gsap.set(slides[i], { autoAlpha: 1 });
+                        gsap.set(slides[i], { autoAlpha: 1, scale: 1, y: 0 });
                     }
                 });
 
