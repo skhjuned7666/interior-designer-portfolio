@@ -88,10 +88,12 @@
       <section class="about-timeline">
           <div class="timeline-container">
               <h2 class="section-title">Our Journey</h2>
+              <p class="timeline-subtitle">A decade of crafting immersive hospitality experiences, one story at a time.</p>
               <div class="timeline">
                   <div class="timeline-item">
                       <div class="timeline-year">2010</div>
                       <div class="timeline-content">
+                          <div class="timeline-card-icon">✦</div>
                           <h3>Foundation</h3>
                           <p>Founded with a passion for transforming spaces, we started as a small design studio with big dreams.</p>
                       </div>
@@ -99,6 +101,7 @@
                   <div class="timeline-item">
                       <div class="timeline-year">2015</div>
                       <div class="timeline-content">
+                          <div class="timeline-card-icon">⇢</div>
                           <h3>Expansion</h3>
                           <p>Expanded our services globally, opening offices in Paris and San Diego to serve clients worldwide.</p>
                       </div>
@@ -106,6 +109,7 @@
                   <div class="timeline-item">
                       <div class="timeline-year">2020</div>
                       <div class="timeline-content">
+                          <div class="timeline-card-icon">🏅</div>
                           <h3>Recognition</h3>
                           <p>Received multiple international awards for excellence in hospitality and commercial interior design.</p>
                       </div>
@@ -113,10 +117,17 @@
                   <div class="timeline-item">
                       <div class="timeline-year">2025</div>
                       <div class="timeline-content">
+                          <div class="timeline-card-icon">⚡</div>
                           <h3>Innovation</h3>
                           <p>Continuing to push boundaries with sustainable design practices and cutting-edge technology integration.</p>
                       </div>
                   </div>
+              </div>
+
+              <div class="timeline-cta">
+                  <h3>Ready to shape your next chapter?</h3>
+                  <p>We collaborate with hospitality brands to turn bold visions into unforgettable experiences.</p>
+                  <a href="work.html" class="timeline-cta-button">View our work ↗</a>
               </div>
           </div>
       </section>
@@ -241,14 +252,68 @@
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(createTween, 100);
+                setTimeout(initTimelineAnimation, 200);
             });
         } else {
             setTimeout(createTween, 100);
+            setTimeout(initTimelineAnimation, 200);
         }
 
         window.addEventListener("resize", () => {
             setTimeout(createTween, 100);
         });
+
+        // Timeline scroll animation
+        function initTimelineAnimation() {
+            const items = document.querySelectorAll(".about-timeline .timeline-item");
+            if (!items.length || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+
+            gsap.set(items, { opacity: 0, y: 40 });
+
+            items.forEach((item, index) => {
+                const year = item.querySelector(".timeline-year");
+                const card = item.querySelector(".timeline-content");
+
+                gsap.to(item, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: item,
+                        start: "top center",
+                        toggleActions: "play none none reverse"
+                    }
+                });
+
+                if (year && card) {
+                    gsap.fromTo(year, 
+                        { color: "#c4b9b5" },
+                        {
+                            color: "#ff5f38",
+                            duration: 0.6,
+                            ease: "power2.out",
+                            scrollTrigger: {
+                                trigger: item,
+                                start: "top center",
+                                toggleActions: "play none none reverse"
+                            }
+                        }
+                    );
+
+                    gsap.from(card, {
+                        scale: 0.96,
+                        duration: 0.7,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: item,
+                            start: "top center",
+                            toggleActions: "play none none reverse"
+                        }
+                    });
+                }
+            });
+        }
     </script>
 </body>
 </html>
