@@ -571,76 +571,190 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize Work page nav / header behavior
     initWorkPageNav();
 
-    // Horizontal scroll portfolio section for Work page
-    window.addEventListener('load', function () {
-        setTimeout(function () {
-            // Check GSAP
-            if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-                console.error("❌ GSAP libraries not loaded!");
-                return;
+    // SVG transition animation for opening/closing the portfolio modal
+    let portfolioTransitionController = null;
+    function initPortfolioTransition() {
+        const overlay = document.querySelector('.portfolio-transition-overlay');
+        const path = overlay?.querySelector('.portfolio-transition-path');
+
+        if (!overlay || !path || typeof gsap === 'undefined') return null;
+
+        const start = "M 0 100 V 50 Q 50 0 100 50 V 100 z";
+        const end = "M 0 100 V 0 Q 50 0 100 0 V 100 z";
+
+        const tl = gsap.timeline({ paused: true });
+
+        tl.to(path, {
+            attr: { d: start },
+            ease: "power2.in",
+            duration: 0.45
+        }).to(path, {
+            attr: { d: end },
+            ease: "power2.out",
+            duration: 0.45
+        });
+
+        function playOpen(onComplete) {
+            overlay.classList.add('active');
+            tl.eventCallback("onComplete", () => {
+                if (typeof onComplete === 'function') onComplete();
+            });
+            tl.play(0);
+        }
+
+        function playClose(onComplete) {
+            tl.eventCallback("onReverseComplete", () => {
+                overlay.classList.remove('active');
+                if (typeof onComplete === 'function') onComplete();
+            });
+            tl.reverse();
+        }
+
+        return { playOpen, playClose };
+    }
+
+    portfolioTransitionController = initPortfolioTransition();
+
+    // Work page – portfolio cards scroll‑reveal animation
+    function initPortfolioCardScrollReveal() {
+        const portfolioSection = document.getElementById('portfolio');
+        if (!portfolioSection || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+        const cards = portfolioSection.querySelectorAll('.portfolio-card');
+        if (!cards.length) return;
+
+        // Initial state
+        gsap.set(cards, { opacity: 0, y: 50 });
+
+        // Staggered reveal for a subtle cinematic entrance
+        gsap.to(cards, {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: 'power3.out',
+            stagger: 0.12,
+            scrollTrigger: {
+                trigger: portfolioSection,
+                start: 'top 75%',
+                end: 'bottom 60%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+    }
+
+    // Portfolio cards: open details in modal on click (with transition)
+    function initPortfolioModal() {
+        const cards = document.querySelectorAll('.portfolio-card');
+        const modalBackdrop = document.getElementById('portfolio-modal');
+        if (!cards.length || !modalBackdrop) return;
+
+        const modalImage = modalBackdrop.querySelector('.portfolio-modal-image img');
+        const modalTitle = modalBackdrop.querySelector('.portfolio-modal-title');
+        const modalSubtitle = modalBackdrop.querySelector('.portfolio-modal-subtitle');
+        const modalDescription = modalBackdrop.querySelector('.portfolio-modal-description');
+        const modalDetails = modalBackdrop.querySelector('.portfolio-modal-details');
+        const modalButton = modalBackdrop.querySelector('.portfolio-modal-button');
+        const closeBtn = modalBackdrop.querySelector('.portfolio-modal-close');
+
+        function openModalFromCard(card) {
+            const img = card.querySelector('.card-image img');
+            const content = card.querySelector('.card-content');
+
+            const titleEl = content?.querySelector('.card-title');
+            const subtitleEl = content?.querySelector('.card-subtitle');
+            const descEl = content?.querySelector('.card-description');
+            const detailsEl = content?.querySelector('.card-details');
+            const buttonEl = content?.querySelector('.card-button');
+
+            if (img && modalImage) {
+                modalImage.src = img.getAttribute('src') || '';
+                modalImage.alt = img.getAttribute('alt') || '';
             }
 
-            const portfolioSection = document.getElementById("portfolio");
-            if (!portfolioSection) {
-                // Not on Work page (no portfolio section), nothing to do
-                return;
+            if (modalTitle) modalTitle.textContent = titleEl?.textContent || '';
+            if (modalSubtitle) modalSubtitle.textContent = subtitleEl?.textContent || '';
+            if (modalDescription) modalDescription.textContent = descEl?.textContent || '';
+
+            if (modalDetails) {
+                modalDetails.innerHTML = detailsEl ? detailsEl.innerHTML : '';
             }
 
-            const pinWrap = portfolioSection.querySelector(".horiz-gallery-strip");
-            if (!pinWrap) {
-                console.error("❌ Gallery strip not found!");
-                return;
+            if (modalButton) {
+                if (buttonEl && buttonEl.getAttribute('href') && buttonEl.getAttribute('href') !== '#') {
+                    modalButton.href = buttonEl.getAttribute('href');
+                    modalButton.style.display = 'inline-flex';
+                } else {
+                    modalButton.href = '#';
+                    modalButton.style.display = 'none';
+                }
             }
 
-            // Function to calculate and setup horizontal scroll
-            function setupHorizontalScroll() {
-                // Get actual width
-                const pinWrapWidth = pinWrap.scrollWidth;
-                const windowWidth = window.innerWidth;
-                const scrollDistance = pinWrapWidth - windowWidth;
+            modalBackdrop.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
 
-                if (scrollDistance <= 0) {
-                    console.warn("⚠️ Content width is not larger than viewport!");
-                    return;
+        function closeModal() {
+            modalBackdrop.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        cards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                // Prevent jumping for inner "#" links inside the card
+                if (e.target.closest('a')) {
+                    e.preventDefault();
                 }
 
-                // Kill existing triggers for this section
-                ScrollTrigger.getAll().forEach(trigger => {
-                    if (trigger.trigger === portfolioSection) {
-                        trigger.kill();
-                    }
-                });
+                const open = () => openModalFromCard(card);
 
-                // Create animation
-                gsap.to(pinWrap, {
-                    x: -scrollDistance,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: portfolioSection,
-                        pin: true,
-                        scrub: 1,
-                        start: "top top",
-                        end: () => `+=${scrollDistance}`,
-                        invalidateOnRefresh: true,
-                        markers: false
-                    }
-                });
-
-                ScrollTrigger.refresh();
-            }
-
-            // Initial setup
-            setupHorizontalScroll();
-
-            // Recalculate on resize
-            let resizeTimer;
-            window.addEventListener('resize', function () {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(function () {
-                    setupHorizontalScroll();
-                }, 300);
+                if (portfolioTransitionController) {
+                    portfolioTransitionController.playOpen(open);
+                } else {
+                    open();
+                }
             });
+        });
 
-        }, 800); // Give more time for everything to load
-    });
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+
+                const finish = () => closeModal();
+                if (portfolioTransitionController) {
+                    portfolioTransitionController.playClose(finish);
+                } else {
+                    finish();
+                }
+            });
+        }
+
+        modalBackdrop.addEventListener('click', (e) => {
+            if (e.target === modalBackdrop) {
+                const finish = () => closeModal();
+                if (portfolioTransitionController) {
+                    portfolioTransitionController.playClose(finish);
+                } else {
+                    finish();
+                }
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalBackdrop.classList.contains('open')) {
+                const finish = () => closeModal();
+                if (portfolioTransitionController) {
+                    portfolioTransitionController.playClose(finish);
+                } else {
+                    finish();
+                }
+            }
+        });
+    }
+
+    initPortfolioCardScrollReveal();
+    initPortfolioModal();
+
+    // Horizontal scroll portfolio section for Work page
+    // Disabled: cards are now shown in a static grid without scroll animation
+    // (kept here commented for reference if needed in future)
 });
