@@ -1150,6 +1150,149 @@ footer {
     margin-bottom: 40px;
 }
 
+/* Services - Process / How We Work */
+.services-process-section {
+    background: #ffffff;
+    color: #2f2f2f;
+    height: auto;
+    min-height: 0;
+    padding: 100px 3vw;
+}
+
+.services-process-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-process-header h2 {
+    font-family: 'hehe', sans-serif;
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #2f2f2f;
+}
+
+.services-process-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    line-height: 1.7;
+}
+
+.services-process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.process-step {
+    padding: 30px 26px;
+    border-radius: 16px;
+    background: #f8f8f8;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.04);
+    border: 1px solid #ececec;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.08);
+    border-color: #ff5f38;
+}
+
+.process-step-number {
+    display: inline-block;
+    font-family: 'nb', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #ff5f38;
+    margin-bottom: 12px;
+}
+
+.process-step h3 {
+    font-family: 'hehe', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #2f2f2f;
+}
+
+.process-step p {
+    font-size: 0.98rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Services - FAQ */
+.services-faq-section {
+    background: #fafafa;
+    color: #2f2f2f;
+    height: auto;
+    min-height: 0;
+    padding: 90px 3vw 120px;
+}
+
+.services-faq-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.services-faq-header h2 {
+    font-family: 'hehe', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: #2f2f2f;
+}
+
+.services-faq-header p {
+    font-size: 1.05rem;
+    color: #777;
+    max-width: 640px;
+    line-height: 1.7;
+}
+
+.services-faq-list {
+    margin-top: 40px;
+    border-top: 1px solid #e3e3e3;
+}
+
+.faq-item {
+    padding: 22px 0;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.faq-item h3 {
+    font-family: 'hehe', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #2f2f2f;
+}
+
+.faq-item p {
+    font-size: 0.98rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+    .services-process-section,
+    .services-faq-section {
+        padding: 70px 5vw;
+    }
+
+    .services-process-header h2 {
+        font-size: 2.3rem;
+    }
+
+    .services-faq-header h2 {
+        font-size: 2.1rem;
+    }
+}
+
 /* Services Page Responsive */
 @media (max-width: 900px) {
     .content {

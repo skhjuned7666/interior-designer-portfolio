@@ -107,7 +107,39 @@
               </div>
           </div>
       </section>
-
+ 
+      <!-- Process / How We Work Section -->
+      <section class="section services-process-section">
+          <div class="services-process-content">
+              <div class="services-process-header">
+                  <h2>How We Work</h2>
+                  <p>From the first conversation to the final handover, our process keeps your project clear, collaborative, and on track.</p>
+              </div>
+              <div class="services-process-steps">
+                  <div class="process-step">
+                      <span class="process-step-number">01</span>
+                      <h3>Discovery & Vision</h3>
+                      <p>We start with conversations, site visits, and understanding your goals, brand, and constraints.</p>
+                  </div>
+                  <div class="process-step">
+                      <span class="process-step-number">02</span>
+                      <h3>Concept & Design</h3>
+                      <p>We develop moodboards, layouts, and design directions that translate your vision into a clear concept.</p>
+                  </div>
+                  <div class="process-step">
+                      <span class="process-step-number">03</span>
+                      <h3>Development & Detailing</h3>
+                      <p>We refine materials, lighting, furniture, and technical details so every element works together.</p>
+                  </div>
+                  <div class="process-step">
+                      <span class="process-step-number">04</span>
+                      <h3>Execution & Turnkey</h3>
+                      <p>Our team manages execution, coordinates vendors, and oversees quality until the space is ready.</p>
+                  </div>
+              </div>
+          </div>
+      </section>
+ 
       <!-- Final Section -->
       <section class="section services-cta-section">
           <div class="services-cta-content">
@@ -116,7 +148,39 @@
               <a href="contact.html" class="cta-button">Get In Touch</a>
           </div>
       </section>
-
+ 
+      <!-- FAQ Section -->
+      <section class="section services-faq-section">
+          <div class="services-faq-content">
+              <div class="services-faq-header">
+                  <h2>Services FAQ</h2>
+                  <p>Answers to some of the questions we get most often about our services and process.</p>
+              </div>
+              <div class="services-faq-list">
+                  <div class="faq-item">
+                      <h3>What types of projects do you take on?</h3>
+                      <p>We work across hospitality, residential, and commercial projects—from boutique spaces to full-scale developments.</p>
+                  </div>
+                  <div class="faq-item">
+                      <h3>Do you offer design-only services?</h3>
+                      <p>Yes. We can support you with design and documentation only, or manage the entire turnkey execution depending on your needs.</p>
+                  </div>
+                  <div class="faq-item">
+                      <h3>How early should we involve you in a project?</h3>
+                      <p>The earlier the better. Involving us at the planning or pre-lease stage often saves time, revisions, and cost later.</p>
+                  </div>
+                  <div class="faq-item">
+                      <h3>Do you work with clients in other cities or countries?</h3>
+                      <p>Yes. We collaborate remotely with clients across geographies and can travel for key milestones when required.</p>
+                  </div>
+                  <div class="faq-item">
+                      <h3>How do your fees work?</h3>
+                      <p>Fees depend on scope, complexity, and engagement model (design-only, supervision, or turnkey). We share a clear proposal after the discovery phase.</p>
+                  </div>
+              </div>
+          </div>
+      </section>
+ 
       <footer>
           <div class="footer-top">
               <!-- Left -->
@@ -169,7 +233,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        // ScrollTrigger Lateral Pin Indicator - Services Page
+        // ScrollTrigger animations - Services Page
         document.addEventListener("DOMContentLoaded", () => {
             gsap.registerPlugin(ScrollTrigger);
 
@@ -177,6 +241,9 @@
             document.body.style.overflow = 'auto';
             document.documentElement.style.overflow = 'auto';
 
+            // ----------------------------
+            // 1. Lateral Pin Indicator
+            // ----------------------------
             const list = document.querySelector(".list");
             const fill = document.querySelector(".fill");
             const listItems = gsap.utils.toArray("li", list);
@@ -248,6 +315,53 @@
                     },
                     0
                 ).to({}, {}); // add a small pause at the end
+            }
+
+            // ----------------------------
+            // 2. Process cards reveal
+            // ----------------------------
+            const processSteps = gsap.utils.toArray(".process-step");
+
+            if (processSteps.length) {
+                gsap.set(processSteps, { autoAlpha: 0, y: 40, scale: 0.98 });
+
+                gsap.to(processSteps, {
+                    autoAlpha: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.6,
+                    ease: "power3.out",
+                    stagger: 0.12,
+                    scrollTrigger: {
+                        trigger: ".services-process-section",
+                        start: "top 75%",
+                        end: "top 40%",
+                        toggleActions: "play none none reverse"
+                    }
+                });
+            }
+
+            // ----------------------------
+            // 3. FAQ items subtle fade / slide
+            // ----------------------------
+            const faqItems = gsap.utils.toArray(".faq-item");
+
+            if (faqItems.length) {
+                gsap.set(faqItems, { autoAlpha: 0, y: 30 });
+
+                faqItems.forEach((item) => {
+                    gsap.to(item, {
+                        autoAlpha: 1,
+                        y: 0,
+                        duration: 0.5,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: item,
+                            start: "top 80%",
+                            toggleActions: "play none none reverse"
+                        }
+                    });
+                });
             }
         });
     </script>
