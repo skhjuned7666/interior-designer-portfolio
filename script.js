@@ -526,4 +526,121 @@ document.addEventListener("DOMContentLoaded", () => {
             lenisScroll.resize();
         }
     }, 200);
+
+    // ============================
+    // Work Page Specific Scripts
+    // (moved from work.html)
+    // ============================
+
+    // Navigation menu interaction and navbar effects for Work page
+    function initWorkPageNav() {
+        const navMenu = document.querySelector('.nav-menu');
+        if (navMenu) {
+            navMenu.addEventListener('click', () => {
+                const contact = document.querySelector('a[href="contact.html"]');
+                if (contact) contact.click();
+            });
+        }
+
+        // Smooth scroll for hash links (e.g. #portfolio) on the same page
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Add scroll effect to navbar using ScrollTrigger (if available)
+        const navbar = document.getElementById('main-nav');
+        if (navbar && typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.create({
+                start: "top -50",
+                end: "max",
+                onEnter: () => navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)',
+                onLeaveBack: () => navbar.style.boxShadow = 'none'
+            });
+        }
+    }
+
+    // Initialize Work page nav / header behavior
+    initWorkPageNav();
+
+    // Horizontal scroll portfolio section for Work page
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            // Check GSAP
+            if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+                console.error("❌ GSAP libraries not loaded!");
+                return;
+            }
+
+            const portfolioSection = document.getElementById("portfolio");
+            if (!portfolioSection) {
+                // Not on Work page (no portfolio section), nothing to do
+                return;
+            }
+
+            const pinWrap = portfolioSection.querySelector(".horiz-gallery-strip");
+            if (!pinWrap) {
+                console.error("❌ Gallery strip not found!");
+                return;
+            }
+
+            // Function to calculate and setup horizontal scroll
+            function setupHorizontalScroll() {
+                // Get actual width
+                const pinWrapWidth = pinWrap.scrollWidth;
+                const windowWidth = window.innerWidth;
+                const scrollDistance = pinWrapWidth - windowWidth;
+
+                if (scrollDistance <= 0) {
+                    console.warn("⚠️ Content width is not larger than viewport!");
+                    return;
+                }
+
+                // Kill existing triggers for this section
+                ScrollTrigger.getAll().forEach(trigger => {
+                    if (trigger.trigger === portfolioSection) {
+                        trigger.kill();
+                    }
+                });
+
+                // Create animation
+                gsap.to(pinWrap, {
+                    x: -scrollDistance,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: portfolioSection,
+                        pin: true,
+                        scrub: 1,
+                        start: "top top",
+                        end: () => `+=${scrollDistance}`,
+                        invalidateOnRefresh: true,
+                        markers: false
+                    }
+                });
+
+                ScrollTrigger.refresh();
+            }
+
+            // Initial setup
+            setupHorizontalScroll();
+
+            // Recalculate on resize
+            let resizeTimer;
+            window.addEventListener('resize', function () {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function () {
+                    setupHorizontalScroll();
+                }, 300);
+            });
+
+        }, 800); // Give more time for everything to load
+    });
 });

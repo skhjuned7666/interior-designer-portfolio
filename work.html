@@ -1,928 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work | H9Y Studio®</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Space+Mono:wght@400;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Space+Mono:wght@400;700&family=Sora:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-dark: #0a0e27;
-            --primary-light: #ffffff;
-            --accent-gold: #d4a574;
-            --accent-warm: #e8b4a0;
-            --text-primary: #1a1a1a;
-            --text-secondary: #666666;
-            --border-subtle: #e8e8e8;
-            --transition: cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Sora', sans-serif;
-            color: var(--text-primary);
-            background: var(--primary-light);
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        nav#main-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.85);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            animation: slideDown 0.6s var(--transition);
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1.2rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--primary-dark);
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-primary);
-            font-size: 0.95rem;
-            font-weight: 500;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-gold);
-            transition: width 0.3s var(--transition);
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-menu {
-            padding: 0.8rem 1.6rem;
-            background: var(--primary-dark);
-            color: var(--primary-light);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s var(--transition);
-            font-weight: 600;
-        }
-
-        .nav-menu:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(10, 14, 39, 0.2);
-        }
-
-        
-
-        /* Hero Section */
-        .work-hero-panel {
-            
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #1a2345 100%);
-            position: relative;
-            overflow: hidden;
-            padding:20px;
-            margin-bottom: 30px;
-        }
-
-        .work-hero-panel::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(232, 180, 160, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .work-hero-content {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            animation: fadeInUp 0.8s var(--transition) 0.2s both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .work-hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary-light);
-            margin-bottom: 0.3rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-            line-height: 1.1;
-        }
-
-        .work-hero-subtitle {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 300;
-            letter-spacing: 0.5px;
-        }
-
-        /* Intro Section */
-        .work-intro-panel {
-            padding: 2rem 0;
-            background: var(--primary-light);
-            border-bottom: 1px solid var(--border-subtle);
-            margin-top: 0;
-        }
-
-        .intro-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: start;
-        }
-
-        .intro-text {
-            animation: fadeInUp 0.8s var(--transition) 0.2s both;
-        }
-
-        .intro-text h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            color: var(--text-primary);
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            line-height: 1.2;
-        }
-
-        .intro-text p {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: var(--text-secondary);
-            margin-bottom: 0.8rem;
-        }
-
-        .intro-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        .intro-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            animation: fadeInUp 0.8s var(--transition) 0.4s both;
-        }
-
-        .intro-feature {
-            padding: 1.25rem;
-            background: rgba(212, 165, 116, 0.05);
-            border-radius: 12px;
-            border-left: 3px solid var(--accent-gold);
-            transition: all 0.3s var(--transition);
-        }
-
-        .intro-feature:hover {
-            background: rgba(212, 165, 116, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .intro-feature h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-        }
-
-        .intro-feature p {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: var(--text-secondary);
-            margin: 0;
-        }
-
-        /* Portfolio Grid */
-        .work-panels-wrapper {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .panel {
-            padding: 3rem 0;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .panel:last-of-type {
-            border-bottom: none;
-        }
-
-        .panel-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .panel:nth-child(odd) .panel-content {
-            grid-auto-flow: dense;
-        }
-
-        .panel:nth-child(odd) .portfolio-image {
-            order: 2;
-        }
-
-        .panel:nth-child(odd) .portfolio-info {
-            order: 1;
-        }
-
-        .portfolio-image {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            aspect-ratio: 1;
-            animation: slideInImage 0.8s var(--transition);
-        }
-
-        @keyframes slideInImage {
-            from {
-                opacity: 0;
-                transform: translateX(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .portfolio-image::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, rgba(232, 180, 160, 0.1) 100%);
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .portfolio-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s var(--transition);
-        }
-
-        .portfolio-image:hover img {
-            transform: scale(1.08);
-        }
-
-        .portfolio-info {
-            animation: slideInInfo 0.8s var(--transition) 0.1s both;
-        }
-
-        @keyframes slideInInfo {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .portfolio-category {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-            padding: 0.4rem 0.8rem;
-            background: rgba(212, 165, 116, 0.1);
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .portfolio-info:hover .portfolio-category {
-            background: var(--accent-gold);
-            color: var(--primary-dark);
-        }
-
-        .portfolio-info h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin: 1rem 0 1.5rem 0;
-            color: var(--text-primary);
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
-        .portfolio-info p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-
-        .portfolio-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 0.8rem 1.6rem;
-            border: 2px solid var(--text-primary);
-            border-radius: 50px;
-            transition: all 0.3s var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .portfolio-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--accent-gold);
-            z-index: -1;
-            transition: left 0.3s var(--transition);
-        }
-
-        .portfolio-link:hover {
-            color: var(--primary-dark);
-            border-color: var(--accent-gold);
-        }
-
-        .portfolio-link:hover::before {
-            left: 0;
-        }
-
-        /* Stats Section */
-        .work-stats-panel {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #1a2345 100%);
-            padding: 6rem 0 !important;
-            border: none !important;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .work-stats-panel::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: 
-                radial-gradient(circle at 0% 50%, rgba(212, 165, 116, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 100% 50%, rgba(232, 180, 160, 0.15) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            position: relative;
-            z-index: 2;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            animation: fadeInUp 0.8s var(--transition);
-        }
-
-        .stat-item:nth-child(1) { animation-delay: 0s; }
-        .stat-item:nth-child(2) { animation-delay: 0.1s; }
-        .stat-item:nth-child(3) { animation-delay: 0.2s; }
-        .stat-item:nth-child(4) { animation-delay: 0.3s; }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            color: var(--accent-gold);
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .stat-label {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-
-        /* CTA Section */
-        .work-cta-panel {
-            background: linear-gradient(135deg, #1a1a1a 0%, var(--primary-dark) 100%);
-            padding: 5rem 0 !important;
-            border: none !important;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .cta-content {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            animation: fadeInUp 0.8s var(--transition) 0.2s both;
-        }
-
-        .work-cta-panel::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: 
-                radial-gradient(circle at 50% 0%, rgba(212, 165, 116, 0.2) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .cta-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: var(--primary-light);
-            margin-bottom: 1rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .cta-content p {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem 2.5rem;
-            background: var(--accent-gold);
-            color: var(--primary-dark);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: all 0.3s var(--transition);
-            border: 2px solid var(--accent-gold);
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--primary-light);
-            z-index: -1;
-            transition: all 0.3s var(--transition);
-        }
-
-        .cta-button:hover {
-            color: var(--accent-gold);
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(212, 165, 116, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-dark);
-            color: var(--primary-light);
-            padding: 4rem 2rem 2rem;
-            margin-top: 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 0%, rgba(212, 165, 116, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 100%, rgba(232, 180, 160, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .footer-top {
-            max-width: 1400px;
-            margin: 0 auto 3rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 4rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .footer-heading {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
-        .locations, .business {
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.8;
-        }
-
-        .newsletter {
-            margin-top: 2rem;
-        }
-
-        .newsletter label {
-            display: block;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 500;
-        }
-
-        .newsletter-input {
-            display: flex;
-            align-items: center;
-            border-bottom: 2px solid var(--accent-gold);
-            padding-bottom: 0.5rem;
-        }
-
-        .newsletter-input input {
-            flex: 1;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: var(--primary-light);
-            font-size: 0.95rem;
-        }
-
-        .newsletter-input input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .newsletter-input span {
-            color: var(--accent-gold);
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.3s var(--transition);
-        }
-
-        .newsletter-input span:hover {
-            transform: translateX(3px);
-        }
-
-        .footer-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .footer-nav a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .footer-nav a::before {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--accent-gold);
-            transition: width 0.3s var(--transition);
-        }
-
-        .footer-nav a:hover {
-            color: var(--accent-gold);
-        }
-
-        .footer-nav a:hover::before {
-            width: 100%;
-        }
-
-        .footer-social {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            align-items: flex-end;
-        }
-
-        .footer-social a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-social a:hover {
-            color: var(--accent-gold);
-        }
-
-        .footer-terms {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.5);
-            text-align: right;
-            line-height: 1.6;
-        }
-
-        .footer-brand {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            font-weight: 700;
-            color: rgba(212, 165, 116, 0.15);
-            letter-spacing: -2px;
-            position: relative;
-            z-index: 1;
-            line-height: 1;
-            margin-top: 2rem;
-            user-select: none;
-        }
-
-        /* Scroll Animation */
-        .panel {
-            opacity: 0;
-            animation: fadeInUp 0.8s var(--transition) forwards;
-        }
-
-        .work-hero-panel {
-            animation: none;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-container {
-                padding: 1rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.85rem;
-            }
-
-            .nav-brand {
-                font-size: 1.1rem;
-            }
-
-            .nav-menu {
-                padding: 0.6rem 1.2rem;
-                font-size: 0.8rem;
-            }
-
-            .work-hero-title {
-                font-size: 3rem;
-            }
-
-            .work-hero-subtitle {
-                font-size: 1rem;
-            }
-
-            .work-hero-panel {
-                min-height: 120px;
-                max-height: 160px;
-                margin-top: 70px;
-                padding: 0.6rem 0;
-            }
-
-            .work-intro-panel {
-                padding: 1.5rem 0;
-            }
-
-            .intro-content {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-                padding: 0 1rem;
-            }
-
-            .intro-text h2 {
-                font-size: 2rem;
-            }
-
-            .intro-text p {
-                font-size: 1rem;
-            }
-
-            .intro-features {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .intro-feature {
-                padding: 1.5rem;
-            }
-
-            .intro-feature h3 {
-                font-size: 1.25rem;
-            }
-
-            .work-panels-wrapper {
-                padding: 0 1rem;
-            }
-
-            .panel {
-                padding: 2rem 0;
-            }
-
-            .work-hero-panel {
-                min-height: 160px;
-                max-height: 220px;
-                margin-top: 65px;
-                padding: 0.8rem 0;
-            }
-
-            .panel-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .portfolio-image {
-                aspect-ratio: auto;
-                min-height: 300px;
-            }
-
-            .portfolio-info h3 {
-                font-size: 2rem;
-            }
-
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-            }
-
-            .stat-number {
-                font-size: 2.5rem;
-            }
-
-            .cta-content h2 {
-                font-size: 2rem;
-            }
-
-            .cta-content p {
-                font-size: 1rem;
-            }
-
-            .footer-top {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .footer-social {
-                align-items: flex-start;
-            }
-
-            .footer-terms {
-                text-align: left;
-            }
-
-            .footer-brand {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-links {
-                gap: 0.8rem;
-                font-size: 0.75rem;
-            }
-
-            .nav-brand {
-                font-size: 1rem;
-            }
-
-            .work-hero-title {
-                font-size: 2.5rem;
-            }
-
-            .work-hero-subtitle {
-                font-size: 0.9rem;
-            }
-
-            .intro-text h2 {
-                font-size: 1.75rem;
-            }
-
-            .intro-text p {
-                font-size: 0.95rem;
-            }
-
-            .intro-feature {
-                padding: 1.25rem;
-            }
-
-            .intro-feature h3 {
-                font-size: 1.1rem;
-            }
-
-            .portfolio-info h3 {
-                font-size: 1.75rem;
-            }
-
-            .stats-container {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-content h2 {
-                font-size: 1.75rem;
-            }
-        }
-
-        /* Scroll reveal animations */
-        @keyframes revealScroll {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .portfolio-info {
-            animation: revealScroll 0.8s var(--transition) forwards;
-        }
-    </style>
+    <!-- GSAP Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
+
 <body>
     <nav id="main-nav">
         <div class="nav-container">
@@ -952,107 +46,202 @@
             <div class="intro-content">
                 <div class="intro-text">
                     <h2>Where Vision Meets Reality</h2>
-                    <p>At H9Y Studio, we believe that exceptional design is born from the perfect fusion of creativity, functionality, and meticulous attention to detail. Every project we undertake is a journey of transformation, where we collaborate closely with our clients to bring their unique vision to life.</p>
-                    <p>Our portfolio showcases a diverse range of projects spanning hospitality, residential, commercial, and restaurant spaces. Each design tells a story, reflects a brand's identity, and creates an environment that inspires and delights.</p>
+                    <p>At H9Y Studio, we believe that exceptional design is born from the perfect fusion of creativity,
+                        functionality, and meticulous attention to detail. Every project we undertake is a journey of
+                        transformation, where we collaborate closely with our clients to bring their unique vision to
+                        life.</p>
+                    <p>Our portfolio showcases a diverse range of projects spanning hospitality, residential,
+                        commercial, and restaurant spaces. Each design tells a story, reflects a brand's identity, and
+                        creates an environment that inspires and delights.</p>
                 </div>
                 <div class="intro-features">
                     <div class="intro-feature">
                         <h3>Design Excellence</h3>
-                        <p>We combine timeless elegance with contemporary innovation to create spaces that stand the test of time.</p>
+                        <p>We combine timeless elegance with contemporary innovation to create spaces that stand the
+                            test of time.</p>
                     </div>
                     <div class="intro-feature">
                         <h3>Client-Centric</h3>
-                        <p>Your vision is our priority. We work closely with you to ensure every detail reflects your unique style and needs.</p>
+                        <p>Your vision is our priority. We work closely with you to ensure every detail reflects your
+                            unique style and needs.</p>
                     </div>
                     <div class="intro-feature">
                         <h3>Quality Craftsmanship</h3>
-                        <p>From concept to completion, we maintain the highest standards of quality in every aspect of our work.</p>
+                        <p>From concept to completion, we maintain the highest standards of quality in every aspect of
+                            our work.</p>
                     </div>
                     <div class="intro-feature">
                         <h3>Innovative Solutions</h3>
-                        <p>We leverage cutting-edge design techniques and materials to create spaces that are both beautiful and functional.</p>
+                        <p>We leverage cutting-edge design techniques and materials to create spaces that are both
+                            beautiful and functional.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Portfolio Horizontal Scroll Section -->
+        <section id="portfolio" class="portfolio-horizontal-section">
+            <div class="container-fluid">
+                <div class="horiz-gallery-wrapper">
+                    <div class="horiz-gallery-strip">
+                        <!-- Project 1 -->
+                        <div class="project-wrap">
+                            <div class="portfolio-card">
+                                <div class="card-image">
+                                    <img src="assets/images/m-card-img-1.jpg" alt="Luxury Resort">
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Luxury Resort</h3>
+                                    <p class="card-subtitle">Hospitality Project</p>
+                                    <p class="card-description">Coastal elegance meets modern comfort</p>
+                                    <div class="card-divider"></div>
+                                    <div class="card-details">
+                                        <div class="detail-item">
+                                            <span class="detail-icon">🌴</span>
+                                            <span class="detail-text">Location: Coastal</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-icon">📅</span>
+                                            <span class="detail-text">Status: Completed 2023</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-icon">🏨</span>
+                                            <span class="detail-text">Type: Hotel & Spa</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="card-button">View Project Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="project-wrap">
+                            <div class="portfolio-card">
+                                <div class="card-image">
+                                    <img src="assets/images/m-card-img-2.jpg" alt="Urban Loft">
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Urban Loft</h3>
+                                    <p class="card-subtitle">Residential Project</p>
+                                    <p class="card-description">Contemporary urban living redefined</p>
+                                    <div class="card-divider"></div>
+                                    <div class="card-details">
+                                        <div class="detail-item">
+                                            <span class="detail-icon">🏙️</span>
+                                            <span class="detail-text">Location: Urban</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-icon">📅</span>
+                                            <span class="detail-text">Status: Completed 2023</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-icon">🏠</span>
+                                            <span class="detail-text">Type: Residential</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="card-button">View Project Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="project-wrap">
+                            <div class="portfolio-card">
+                                <div class="card-image">
+                                    <img src="assets/images/m-card-img-6.jpg" alt="Corporate Headquarters">
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Corporate Headquarters</h3>
+                                    <p class="card-subtitle">Commercial Project</p>
+                                    <p class="card-description">Dynamic workspace fostering innovation</p>
+                                    <div class="card-divider"></div>
+                                    <div class="card-details">
+                                        <div class="detail-item">
+                                            <span class="detail-icon">🏢</span>
+                                            <span class="detail-text">Location: Business District</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-icon">📅</span>
+                                            <span class="detail-text">Status: Completed 2023</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-icon">💼</span>
+                                            <span class="detail-text">Type: Commercial</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="card-button">View Project Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 -->
+                        <div class="project-wrap">
+                            <div class="portfolio-card">
+                                <div class="card-image">
+                                    <img src="assets/images/m-card-img-5.jpg" alt="Boutique Hotel">
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Boutique Hotel</h3>
+                                    <p class="card-subtitle">Hospitality Project</p>
+                                    <p class="card-description">Intimate experience blending culture</p>
+                                    <div class="card-divider"></div>
+                                    <div class="card-details">
+                                        <div class="detail-item">
+                                            <span class="detail-icon">🌴</span>
+                                            <span class="detail-text">Location: Coastal</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-icon">📅</span>
+                                            <span class="detail-text">Status: Completed 2023</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-icon">🏨</span>
+                                            <span class="detail-text">Type: Hotel</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="card-button">View Project Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 5 -->
+                        <div class="project-wrap">
+                            <div class="portfolio-card">
+                                <div class="card-image">
+                                    <img src="assets/images/m-card-img-8.jpg" alt="Restaurant Design">
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Restaurant Design</h3>
+                                    <p class="card-subtitle">Restaurant Project</p>
+                                    <p class="card-description">Culinary excellence meets innovation</p>
+                                    <div class="card-divider"></div>
+                                    <div class="card-details">
+                                        <div class="detail-item">
+                                            <span class="detail-icon">🍽️</span>
+                                            <span class="detail-text">Location: Downtown</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-icon">📅</span>
+                                            <span class="detail-text">Status: Completed 2023</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="detail-icon">🍴</span>
+                                            <span class="detail-text">Type: Restaurant</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="card-button">View Project Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
         <!-- Wrapper for all portfolio panels -->
         <div class="work-panels-wrapper">
-            <!-- Project 1 -->
-            <section class="panel panel-1">
-                <div class="panel-content">
-                    <div class="portfolio-image">
-                        <img src="assets/images/m-card-img-1.jpg" alt="Luxury Resort">
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Hospitality</span>
-                        <h3>Luxury Resort</h3>
-                        <p>A breathtaking coastal retreat where modern luxury meets natural beauty, creating an unforgettable hospitality experience.</p>
-                        <a href="#" class="portfolio-link">View Project ↗</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Project 2 -->
-            <section class="panel panel-2">
-                <div class="panel-content">
-                    <div class="portfolio-image">
-                        <img src="assets/images/m-card-img-2.jpg" alt="Urban Loft">
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Residential</span>
-                        <h3>Urban Loft</h3>
-                        <p>Contemporary urban living redefined through intelligent space planning and sophisticated material selection.</p>
-                        <a href="#" class="portfolio-link">View Project ↗</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Project 3 -->
-            <section class="panel panel-3">
-                <div class="panel-content">
-                    <div class="portfolio-image">
-                        <img src="assets/images/m-card-img-6.jpg" alt="Corporate Headquarters">
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Commercial</span>
-                        <h3>Corporate Headquarters</h3>
-                        <p>A dynamic workspace that fosters collaboration and innovation, reflecting the company's forward-thinking culture.</p>
-                        <a href="#" class="portfolio-link">View Project ↗</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Project 4 -->
-            <section class="panel panel-4">
-                <div class="panel-content">
-                    <div class="portfolio-image">
-                        <img src="assets/images/m-card-img-5.jpg" alt="Boutique Hotel">
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Hospitality</span>
-                        <h3>Boutique Hotel</h3>
-                        <p>An intimate hospitality experience blending local culture with international design sensibilities.</p>
-                        <a href="#" class="portfolio-link">View Project ↗</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Project 5 -->
-            <section class="panel panel-5">
-                <div class="panel-content">
-                    <div class="portfolio-image">
-                        <img src="assets/images/m-card-img-8.jpg" alt="Restaurant Design">
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Restaurant</span>
-                        <h3>Restaurant Design</h3>
-                        <p>Culinary excellence meets architectural innovation in this award-winning restaurant space.</p>
-                        <a href="#" class="portfolio-link">View Project ↗</a>
-                    </div>
-                </div>
-            </section>
-
+            
             <!-- Stats Section -->
             <section class="panel work-stats-panel">
                 <div class="stats-container">
@@ -1072,6 +261,16 @@
                         <h2 class="stat-number">15+</h2>
                         <p class="stat-label">Years Experience</p>
                     </div>
+                    
+                </div><!-- View More Projects Button -->
+                <div class="portfolio-button-container">
+                    <a href="#" class="portfolio-view-more-btn">
+                        <span>View More Projects</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
                 </div>
             </section>
 
@@ -1103,7 +302,7 @@
                     <label>Sign up for our newsletter (No spam)</label>
                     <div class="newsletter-input">
                         <input type="email" placeholder="Email" />
-                        <span>↗</span>
+                        <span>→</span>
                     </div>
                 </div>
             </div>
@@ -1129,76 +328,8 @@
         <div class="footer-brand">H9Y Studio</div>
     </footer>
 
-    <script>
-        // Smooth scroll animations for portfolio items
-        const observerOptions = {
-            threshold: 0.2,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.8s var(--transition) forwards';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe all portfolio panels
-        document.querySelectorAll('.panel-1, .panel-2, .panel-3, .panel-4, .panel-5').forEach(panel => {
-            panel.style.opacity = '0';
-            observer.observe(panel);
-        });
-
-        // Navigation menu interaction
-        document.querySelector('.nav-menu').addEventListener('click', () => {
-            const contact = document.querySelector('a[href="contact.html"]');
-            if (contact) contact.click();
-        });
-
-        // Smooth scroll for navigation
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href.startsWith('#')) {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-
-        // Add scroll effect to navbar
-        let lastScrollTop = 0;
-        const navbar = document.getElementById('main-nav');
-
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > 50) {
-                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                navbar.style.boxShadow = 'none';
-            }
-            
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-        });
-
-        // Add active state to navigation
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('.panel');
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('class');
-                }
-            });
-        });
-    </script>
+    <!-- Moved inline scripts into script.js -->
+    <script src="script.js"></script>
 </body>
+
 </html>
