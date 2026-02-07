@@ -216,6 +216,11 @@
 
         let flipCtx;
 
+        // Check if screen is large (desktop)
+        function isLargeScreen() {
+            return window.innerWidth > 1024;
+        }
+
         const createTween = () => {
             let galleryElement = document.querySelector("#gallery-8");
             
@@ -239,32 +244,51 @@
             });
 
             flipCtx && flipCtx.revert();
-            galleryElement.classList.remove("gallery--final");
 
-            flipCtx = gsap.context(() => {
-                // Temporarily add the final class to capture the final state
-                galleryElement.classList.add("gallery--final");
-                const flipState = Flip.getState(galleryItems);
+            // Only run animation on large screens
+            if (isLargeScreen()) {
                 galleryElement.classList.remove("gallery--final");
 
-                const flip = Flip.to(flipState, {
-                    simple: true,
-                    ease: "expoScale(1, 5)"
-                });
+                flipCtx = gsap.context(() => {
+                    // Temporarily add the final class to capture the final state
+                    galleryElement.classList.add("gallery--final");
+                    const flipState = Flip.getState(galleryItems);
+                    galleryElement.classList.remove("gallery--final");
 
-                const tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: galleryElement,
-                        start: "center center",
-                        end: "+=100%",
-                        scrub: true,
-                        pin: galleryElement.parentNode,
-                        markers: false
-                    }
+                    const flip = Flip.to(flipState, {
+                        simple: true,
+                        ease: "expoScale(1, 5)"
+                    });
+
+                    const tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: galleryElement,
+                            start: "center center",
+                            end: "+=100%",
+                            scrub: true,
+                            pin: galleryElement.parentNode,
+                            markers: false,
+                            invalidateOnRefresh: true
+                        }
+                    });
+                    tl.add(flip);
+                    return () => gsap.set(galleryItems, { clearProps: "all" });
                 });
-                tl.add(flip);
-                return () => gsap.set(galleryItems, { clearProps: "all" });
-            });
+            } else {
+                // On small screens: Show gallery in final state, no animation, no pinning
+                galleryElement.classList.add("gallery--final");
+                // Remove any transforms/animations
+                gsap.set(galleryItems, { clearProps: "all" });
+                // Ensure parent is not pinned
+                const parent = galleryElement.parentNode;
+                if (parent) {
+                    parent.style.position = '';
+                    parent.style.top = '';
+                    parent.style.left = '';
+                    parent.style.width = '';
+                    parent.style.height = '';
+                }
+            }
         };
 
         // Wait for DOM and GSAP to be ready
@@ -279,6 +303,13 @@
         }
 
         window.addEventListener("resize", () => {
+            // Kill all ScrollTriggers on resize
+            ScrollTrigger.getAll().forEach(trigger => {
+                const triggerElement = trigger.vars && trigger.vars.trigger;
+                if (triggerElement && triggerElement.id === "gallery-8") {
+                    trigger.kill();
+                }
+            });
             setTimeout(createTween, 100);
         });
 
@@ -287,12 +318,21 @@
             const items = document.querySelectorAll(".about-timeline .timeline-item");
             if (!items.length || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
 
+            // Kill existing ScrollTriggers for timeline items
+            ScrollTrigger.getAll().forEach(trigger => {
+                const triggerElement = trigger.vars && trigger.vars.trigger;
+                if (triggerElement && triggerElement.classList && triggerElement.classList.contains('timeline-item')) {
+                    trigger.kill();
+                }
+            });
+
             gsap.set(items, { opacity: 0, y: 40 });
 
             items.forEach((item, index) => {
                 const year = item.querySelector(".timeline-year");
                 const card = item.querySelector(".timeline-content");
 
+                // Animation triggers earlier so cards are visible when they reach center
                 gsap.to(item, {
                     opacity: 1,
                     y: 0,
@@ -300,8 +340,9 @@
                     ease: "power3.out",
                     scrollTrigger: {
                         trigger: item,
-                        start: "top center",
-                        toggleActions: "play none none reverse"
+                        start: "top 85%", // Trigger when top of item is 85% down viewport (earlier trigger)
+                        toggleActions: "play none none reverse",
+                        markers: false
                     }
                 });
 
@@ -314,7 +355,7 @@
                             ease: "power2.out",
                             scrollTrigger: {
                                 trigger: item,
-                                start: "top center",
+                                start: "top 85%", // Same trigger point
                                 toggleActions: "play none none reverse"
                             }
                         }
@@ -326,7 +367,7 @@
                         ease: "power3.out",
                         scrollTrigger: {
                             trigger: item,
-                            start: "top center",
+                            start: "top 85%", // Same trigger point
                             toggleActions: "play none none reverse"
                         }
                     });

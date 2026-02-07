@@ -2242,6 +2242,62 @@ footer {
     background: #f5f5f5;
 }
 
+/* Disable pinning and fixed height on mobile */
+@media (max-width: 1024px) {
+    .gallery-wrap {
+        height: auto !important;
+        min-height: auto !important;
+        position: relative !important;
+        overflow: visible !important;
+        padding: 40px 0;
+    }
+    
+    /* Show gallery in final state on mobile */
+    .gallery--bento {
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-rows: repeat(4, auto) !important;
+        gap: 10px !important;
+        height: auto !important;
+    }
+    
+    .gallery--bento .gallery__item {
+        height: 250px;
+        min-height: 250px;
+    }
+    
+    .gallery--bento .gallery__item:nth-child(1) {
+        grid-area: 1 / 1 / 3 / 2;
+    }
+    
+    .gallery--bento .gallery__item:nth-child(2) {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+    
+    .gallery--bento .gallery__item:nth-child(3) {
+        grid-area: 2 / 2 / 4 / 3;
+    }
+    
+    .gallery--bento .gallery__item:nth-child(4) {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    
+    .gallery--bento .gallery__item:nth-child(5) {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+    
+    .gallery--bento .gallery__item:nth-child(6) {
+        grid-area: 3 / 2 / 5 / 3;
+    }
+    
+    .gallery--bento .gallery__item:nth-child(7) {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+    
+    .gallery--bento .gallery__item:nth-child(8) {
+        grid-area: 4 / 2 / 5 / 3;
+    }
+}
+
 .gallery {
     position: relative;
     width: 100%;
@@ -2366,23 +2422,27 @@ footer {
 
 @media (max-width: 500px) {
     .gallery-wrap {
-        height: 80vh;
+        height: auto !important;
+        min-height: auto !important;
+        padding: 20px 0;
     }
 
     .gallery--bento {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(8, auto);
-        gap: 10px;
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(8, auto) !important;
+        gap: 10px !important;
+        height: auto !important;
     }
 
     .gallery--bento .gallery__item {
         grid-area: auto !important;
         height: 200px;
+        min-height: 200px;
     }
 
     .gallery--final.gallery--bento {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(8, auto);
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(8, auto) !important;
     }
 
     .about-content-section {
@@ -2759,9 +2819,169 @@ footer {
 
 .timeline-cta-button:active {
     transform: translateY(-1px);
-    box-shadow:
-        0 10px 26px rgba(255, 95, 56, 0.4),
-        0 0 18px rgba(255, 95, 56, 0.55);
+}
+
+/* Timeline Section - Mobile Responsive */
+@media (max-width: 768px) {
+    .about-timeline {
+        padding: 60px 4vw 80px;
+    }
+
+    .timeline-container {
+        padding: 0;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 6vw, 2.8rem);
+        margin-bottom: 12px;
+    }
+
+    .timeline-subtitle {
+        font-size: clamp(0.9rem, 3vw, 1rem);
+        padding: 0 10px;
+    }
+
+    .timeline {
+        margin-top: 30px;
+        padding: 30px 0 20px;
+    }
+
+    /* Move timeline line to left on mobile */
+    .timeline::before {
+        left: 20px;
+        transform: none;
+        width: 2px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        margin-bottom: 40px;
+        padding-left: 50px; /* Space for timeline line and dot */
+    }
+
+    .timeline-item:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Year styling for mobile */
+    .timeline-item:nth-child(odd) .timeline-year,
+    .timeline-item:nth-child(even) .timeline-year {
+        order: 1;
+        text-align: left;
+        padding: 0;
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        margin-bottom: 8px;
+    }
+
+    /* Year dot positioning for mobile */
+    .timeline-year::before {
+        left: -42px !important;
+        right: auto !important;
+        width: 14px;
+        height: 14px;
+        box-shadow: 0 0 0 4px rgba(255, 95, 56, 0.15);
+    }
+
+    /* Content styling for mobile */
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        order: 2;
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+
+    .timeline-content h3 {
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+        margin-bottom: 8px;
+    }
+
+    .timeline-content p {
+        font-size: clamp(0.9rem, 3vw, 1rem);
+        line-height: 1.6;
+    }
+
+    .timeline-card-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+    }
+
+    /* CTA section mobile */
+    .timeline-cta {
+        margin-top: 50px;
+        padding: 24px 20px;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .timeline-cta h3 {
+        font-size: clamp(1.2rem, 4vw, 1.4rem);
+        text-align: center;
+    }
+
+    .timeline-cta p {
+        font-size: clamp(0.9rem, 3vw, 0.95rem);
+        text-align: center;
+    }
+
+    .timeline-cta-button {
+        padding: 0.75rem 1.5rem;
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-timeline {
+        padding: 50px 3vw 70px;
+    }
+
+    .timeline {
+        margin-top: 25px;
+        padding: 25px 0 15px;
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+        margin-bottom: 35px;
+        gap: 16px;
+    }
+
+    .timeline-year::before {
+        left: -37px !important;
+        width: 12px;
+        height: 12px;
+        box-shadow: 0 0 0 3px rgba(255, 95, 56, 0.15);
+    }
+
+    .timeline-content {
+        padding: 20px 18px;
+        border-radius: 14px;
+    }
+
+    .timeline-card-icon {
+        width: 26px;
+        height: 26px;
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+
+    .timeline-cta {
+        margin-top: 40px;
+        padding: 20px 18px;
+    }
+
+    .timeline-cta-button {
+        padding: 0.7rem 1.3rem;
+    }
 }
 
 
