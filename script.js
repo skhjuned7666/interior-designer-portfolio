@@ -622,6 +622,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!cards.length || !modalBackdrop) return;
 
         const modalImage = modalBackdrop.querySelector('.portfolio-modal-image img');
+        const heroMainImg = modalBackdrop.querySelector('.hero-main-img');
         const modalTitle = modalBackdrop.querySelector('.portfolio-modal-title');
         const modalSubtitle = modalBackdrop.querySelector('.portfolio-modal-subtitle');
         const modalDescription = modalBackdrop.querySelector('.portfolio-modal-description');
@@ -639,9 +640,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const detailsEl = content?.querySelector('.card-details');
             const buttonEl = content?.querySelector('.card-button');
 
-            if (img && modalImage) {
-                modalImage.src = img.getAttribute('src') || '';
-                modalImage.alt = img.getAttribute('alt') || '';
+            if (img) {
+                const targetImg = heroMainImg || modalImage;
+                if (targetImg) {
+                    targetImg.src = img.getAttribute('src') || '';
+                    targetImg.alt = img.getAttribute('alt') || '';
+                }
             }
 
             if (modalTitle) modalTitle.textContent = titleEl?.textContent || '';
@@ -725,6 +729,92 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     initPortfolioModal();
+
+    // Portfolio Modal Image Navigation for Mobile
+    function initPortfolioImageNav() {
+        const modalBackdrop = document.getElementById('portfolio-modal');
+        if (!modalBackdrop) return;
+
+        const imageContainer = modalBackdrop.querySelector('.portfolio-modal-image');
+        if (!imageContainer) return;
+
+        const heroMain = imageContainer.querySelector('.hero-main-img');
+        const heroSides = imageContainer.querySelectorAll('.hero-side-img');
+        const prevBtn = modalBackdrop.querySelector('.portfolio-nav-prev');
+        const nextBtn = modalBackdrop.querySelector('.portfolio-nav-next');
+        const navDots = modalBackdrop.querySelectorAll('.nav-dot');
+
+        if (!heroMain || !prevBtn || !nextBtn || heroSides.length === 0) return;
+
+        // Collect all images
+        const images = [heroMain, ...Array.from(heroSides)];
+        let currentIndex = 0;
+
+        function updateImage(index) {
+            if (index < 0 || index >= images.length) return;
+
+            // Update image visibility with fade effect
+            images.forEach((img, i) => {
+                if (i === index) {
+                    img.style.opacity = '1';
+                    img.style.zIndex = '2';
+                } else {
+                    img.style.opacity = '0';
+                    img.style.zIndex = '0';
+                }
+            });
+
+            // Update dots
+            navDots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+
+            currentIndex = index;
+        }
+
+        // Next button
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const nextIndex = (currentIndex + 1) % images.length;
+            updateImage(nextIndex);
+        });
+
+        // Prev button
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const prevIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage(prevIndex);
+        });
+
+        // Dot navigation
+        navDots.forEach((dot, index) => {
+            dot.addEventListener('click', (e) => {
+                e.stopPropagation();
+                updateImage(index);
+            });
+        });
+
+        // Reset to first image when modal opens
+        const observer = new MutationObserver(() => {
+            if (modalBackdrop.classList.contains('open')) {
+                updateImage(0);
+            }
+        });
+
+        observer.observe(modalBackdrop, {
+            attributes: true,
+            attributeFilter: ['class']
+        });
+
+        // Initialize
+        updateImage(0);
+    }
+
+    initPortfolioImageNav();
 
     // Work page: scroll-based animation for portfolio cards
     function initWorkPortfolioScrollAnimation() {
