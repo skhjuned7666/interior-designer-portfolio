@@ -20,15 +20,29 @@
 <body>
     <nav id="main-nav">
         <div class="nav-container">
-            <span class="nav-brand">Vision To Reality.</span>
-            <div class="nav-links">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-text">Vision To Reality.</span>
+                <span class="brand-accent"></span>
+            </a>
+            <div class="nav-links" id="navLinks">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="work.html" class="nav-link active">Work</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="services.html" class="nav-link">Services</a>
                 <a href="contact.html" class="nav-link">Contact</a>
+                <a href="contact.html" class="nav-link nav-cta-mobile">Let's talk</a>
             </div>
-            <span class="nav-menu">Let's talk ↗</span>
+            <a href="contact.html" class="nav-cta">
+                <span>Let's talk</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
