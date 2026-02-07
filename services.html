@@ -341,21 +341,72 @@
             // ----------------------------
             const processSteps = gsap.utils.toArray(".process-step");
 
-            if (processSteps.length) {
-                gsap.set(processSteps, { autoAlpha: 0, y: 40, scale: 0.98 });
-
-                gsap.to(processSteps, {
-                    autoAlpha: 1,
+            if (processSteps.length >= 4) {
+                // Get viewport dimensions for responsive animation
+                const vw = window.innerWidth;
+                const vh = window.innerHeight;
+                const isMobile = vw < 768;
+                
+                // Set initial positions - cards from 4 sides of screen
+                // Card 1 (top-left): from left side
+                gsap.set(processSteps[0], { 
+                    x: isMobile ? -vw * 1.5 : -vw, 
                     y: 0,
+                    autoAlpha: 0,
+                    scale: 0.7,
+                    rotation: isMobile ? 0 : -5
+                });
+                
+                // Card 2 (top-right): from top side
+                gsap.set(processSteps[1], { 
+                    x: 0, 
+                    y: isMobile ? -vh * 1.5 : -vh,
+                    autoAlpha: 0,
+                    scale: 0.7,
+                    rotation: isMobile ? 0 : 5
+                });
+                
+                // Card 3 (bottom-left): from bottom side
+                gsap.set(processSteps[2], { 
+                    x: 0, 
+                    y: isMobile ? vh * 1.5 : vh,
+                    autoAlpha: 0,
+                    scale: 0.7,
+                    rotation: isMobile ? 0 : -5
+                });
+                
+                // Card 4 (bottom-right): from right side
+                gsap.set(processSteps[3], { 
+                    x: isMobile ? vw * 1.5 : vw, 
+                    y: 0,
+                    autoAlpha: 0,
+                    scale: 0.7,
+                    rotation: isMobile ? 0 : 5
+                });
+
+                // Animate all cards to their final positions
+                gsap.to(processSteps, {
+                    x: 0,
+                    y: 0,
+                    autoAlpha: 1,
                     scale: 1,
-                    duration: 0.6,
+                    rotation: 0,
+                    duration: isMobile ? 1.0 : 1.2,
+                    stagger: isMobile ? 0.1 : 0.15,
                     ease: "power3.out",
-                    stagger: 0.12,
                     scrollTrigger: {
                         trigger: ".services-process-section",
-                        start: "top 75%",
-                        end: "top 40%",
-                        toggleActions: "play none none reverse"
+                        start: "top 50%", // Section 50% visible hone par animation start - user ko clearly dikhega
+                        end: "top 10%",
+                        toggleActions: "play none none none",
+                        markers: false, // Set to true for debugging
+                        once: true, // Animation sirf ek baar play ho
+                        onEnter: () => {
+                            // Ensure cards are visible after animation
+                            processSteps.forEach(step => {
+                                step.style.visibility = 'visible';
+                            });
+                        }
                     }
                 });
             }
