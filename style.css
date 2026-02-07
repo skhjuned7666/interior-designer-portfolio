@@ -452,8 +452,7 @@ html,body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: -10vw;
+    justify-content: center;
 }
 
 nav{
@@ -5413,8 +5412,7 @@ html,body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: -10vw;
+    justify-content: center;
 }
 
 nav{
@@ -10374,8 +10372,7 @@ html,body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: -10vw;
+    justify-content: center;
 }
 
 nav{
@@ -15335,8 +15332,7 @@ html,body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: -10vw;
+    justify-content: center;
 }
 
 nav{
@@ -20296,8 +20292,7 @@ html,body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: -10vw;
+    justify-content: center;
 }
 
 nav{
