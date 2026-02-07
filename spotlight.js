@@ -21,13 +21,147 @@ const spotlightItems = [
 { name: "Mono 73", img: "iconiqa 4.jpg" },
 ];
 
-// Wait for DOM and libraries to be ready
-function initSpotlight() {
-    if (typeof Lenis === 'undefined' || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-        console.warn("Spotlight: Required libraries not loaded");
+// Slider functionality for mobile/tablet
+function initSpotlightSlider() {
+    const sliderTrack = document.querySelector(".spotlight-slider-track");
+    const progressBar = document.querySelector(".spotlight-slider-progress-bar");
+    const progressContainer = document.querySelector(".spotlight-slider-progress");
+    const prevBtn = document.querySelector(".spotlight-slider-prev");
+    const nextBtn = document.querySelector(".spotlight-slider-next");
+    
+    if (!sliderTrack || !progressBar || !progressContainer || !prevBtn || !nextBtn) {
+        console.warn("Spotlight slider elements not found");
         return;
     }
+    
+    // Clear existing content
+    sliderTrack.innerHTML = "";
+    
+    let currentSlide = 0;
+    
+    // Create slides
+    spotlightItems.forEach((item, index) => {
+        // Create slide
+        const slide = document.createElement("div");
+        slide.className = "spotlight-slide";
+        
+        const image = document.createElement("img");
+        image.src = item.img;
+        image.alt = item.name;
+        image.className = "spotlight-slide-image";
+        
+        const content = document.createElement("div");
+        content.className = "spotlight-slide-content";
+        
+        const title = document.createElement("h2");
+        title.className = "spotlight-slide-title";
+        title.textContent = item.name;
+        
+        content.appendChild(title);
+        slide.appendChild(image);
+        slide.appendChild(content);
+        sliderTrack.appendChild(slide);
+    });
+    
+    // Update slider position
+    function updateSlider() {
+        sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update progress bar
+        const progress = ((currentSlide + 1) / spotlightItems.length) * 100;
+        progressBar.style.width = `${progress}%`;
+        
+        // Update buttons
+        prevBtn.disabled = currentSlide === 0;
+        nextBtn.disabled = currentSlide === spotlightItems.length - 1;
+    }
+    
+    // Click on progress bar to navigate
+    progressContainer.addEventListener("click", (e) => {
+        const rect = progressContainer.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const percentage = clickX / rect.width;
+        const targetSlide = Math.floor(percentage * spotlightItems.length);
+        goToSlide(Math.min(targetSlide, spotlightItems.length - 1));
+    });
+    
+    // Navigate to specific slide
+    function goToSlide(index) {
+        if (index >= 0 && index < spotlightItems.length) {
+            currentSlide = index;
+            updateSlider();
+        }
+    }
+    
+    // Next slide
+    function nextSlide() {
+        if (currentSlide < spotlightItems.length - 1) {
+            currentSlide++;
+            updateSlider();
+        }
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateSlider();
+        }
+    }
+    
+    // Button event listeners
+    nextBtn.addEventListener("click", nextSlide);
+    prevBtn.addEventListener("click", prevSlide);
+    
+    // Swipe support for touch devices
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const sliderContainer = document.querySelector(".spotlight-slider-container");
+    
+    if (sliderContainer) {
+        sliderContainer.addEventListener("touchstart", (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        sliderContainer.addEventListener("touchend", (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+    }
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swipe left - next slide
+                nextSlide();
+            } else {
+                // Swipe right - previous slide
+                prevSlide();
+            }
+        }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+        const slider = document.querySelector(".spotlight-slider");
+        if (!slider || !slider.offsetParent) return; // Check if slider is visible
+        
+        if (e.key === "ArrowLeft") {
+            prevSlide();
+        } else if (e.key === "ArrowRight") {
+            nextSlide();
+        }
+    });
+    
+    // Initialize
+    updateSlider();
+}
 
+// Wait for DOM and libraries to be ready
+function initSpotlight() {
     const titlesContainer = document.querySelector(".spotlight-titles");
     const imagesContainer = document.querySelector(".spotlight-images");
     const spotlightHeader = document.querySelector(".spotlight-header");
@@ -39,6 +173,18 @@ function initSpotlight() {
     // Check if Spotlight section exists
     if (!titlesContainer || !imagesContainer || !spotlightHeader || !titlesContainerElement) {
         console.warn("Spotlight section elements not found");
+        return;
+    }
+
+    // For tablet and mobile (<= 1024px), create slider
+    if (window.innerWidth <= 1024) {
+        initSpotlightSlider();
+        return; // Don't initialize animations
+    }
+
+    // Desktop: Initialize animations
+    if (typeof Lenis === 'undefined' || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+        console.warn("Spotlight: Required libraries not loaded");
         return;
     }
 
@@ -242,3 +388,43 @@ if (document.readyState === 'loading') {
     // DOM is already ready
     initSpotlight();
 }
+
+// Handle window resize - only reinitialize if crossing breakpoint
+let lastWidth = window.innerWidth;
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        const currentWidth = window.innerWidth;
+        const wasMobile = lastWidth <= 1024;
+        const isMobile = currentWidth <= 1024;
+        
+        // Only reinitialize if crossing the 1024px breakpoint
+        if (wasMobile !== isMobile) {
+            // Kill existing ScrollTriggers if any
+            if (typeof ScrollTrigger !== 'undefined') {
+                ScrollTrigger.getAll().forEach(trigger => {
+                    if (trigger.vars && trigger.vars.trigger === '.spotlight') {
+                        trigger.kill();
+                    }
+                });
+            }
+            // Clear and reinitialize
+            const titlesContainer = document.querySelector(".spotlight-titles");
+            if (titlesContainer) {
+                titlesContainer.innerHTML = '';
+            }
+            const sliderTrack = document.querySelector(".spotlight-slider-track");
+            if (sliderTrack) {
+                sliderTrack.innerHTML = '';
+            }
+            const progressBar = document.querySelector(".spotlight-slider-progress-bar");
+            if (progressBar) {
+                progressBar.style.width = '0%';
+            }
+            initSpotlight();
+        }
+        
+        lastWidth = currentWidth;
+    }, 250);
+});

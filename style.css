@@ -505,7 +505,7 @@ nav h4{
     border: 0;
     height: 1px;
     background: #e0e0e0;
-    margin: 12px 6vw 0px 6vw;
+    margin: 12px 6vw -12px 6vw;
 }
 
 #logo-section {
@@ -521,7 +521,6 @@ nav h4{
 
 #text-content {
     padding: 0px 6vw 60px 6vw;
-    margin-top: -8px;
 }
 
 #text-content h1 {
@@ -543,6 +542,116 @@ nav h4{
     line-height: 1.2;
     color: #555;
 }
+
+/* Responsive styles for #page2 - Tablet */
+@media (max-width: 1024px) {
+    #page2 {
+        height: auto;
+        min-height: 100vh;
+        padding: 4vw 3vw;
+    }
+    
+    #page2 header {
+        padding: 15px 4vw;
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    #logo-section {
+        font-size: 18px;
+    }
+    
+    #location {
+        font-size: 18px;
+    }
+    
+    .divider {
+        margin: 15px 4vw 20px 4vw;
+    }
+    
+    #text-content {
+        padding: 20px 4vw 40px 4vw;
+    }
+    
+    #text-content h1 {
+        font-size: 5vw;
+        max-width: 100%;
+        line-height: 1.1;
+    }
+}
+
+/* Responsive styles for #page2 - Mobile */
+@media (max-width: 768px) {
+    #page2 {
+        padding: 3vw 4vw;
+    }
+    
+    #page2 header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px 4vw;
+    }
+    
+    #logo-section {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    
+    #location {
+        font-size: 16px;
+    }
+    
+    .divider {
+        margin: 20px 4vw 25px 4vw;
+    }
+    
+    #text-content {
+        padding: 25px 4vw 40px 4vw;
+    }
+    
+    #text-content h1 {
+        font-size: 6.5vw;
+        line-height: 1.15;
+        letter-spacing: -0.3px;
+    }
+}
+
+/* Responsive styles for #page2 - Small Mobile */
+@media (max-width: 480px) {
+    #page2 {
+        padding: 4vw 5vw;
+    }
+    
+    #page2 header {
+        padding: 20px 5vw;
+        gap: 12px;
+    }
+    
+    #logo-section {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    #location {
+        font-size: 14px;
+    }
+    
+    .divider {
+        margin: 20px 5vw 25px 5vw;
+    }
+    
+    #text-content {
+        padding: 25px 5vw 40px 5vw;
+    }
+    
+    #text-content h1 {
+        font-size: 7.5vw;
+        line-height: 1.2;
+        letter-spacing: -0.2px;
+    }
+}
+
 img {
     width: 100%;
     height: 100%;
@@ -994,6 +1103,185 @@ section{
     transition: opacity 0.3s ease;
     z-index: 2;
     opacity: 0;
+}
+
+/* Hide slider on desktop */
+.spotlight-slider {
+    display: none;
+}
+
+/* Responsive styles for Spotlight - Tablet and Mobile (Simple UI) */
+@media (max-width: 1024px) {
+    .spotlight {
+        height: auto;
+        min-height: 100vh;
+        padding: 60px 4vw !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .spotlight-intro-text-wrapper {
+        position: relative;
+        top: auto;
+        transform: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+    
+    .spotlight-intro-text {
+        position: relative;
+        transform: none !important;
+        opacity: 1 !important;
+        will-change: auto;
+        text-align: center;
+    }
+    
+    .spotlight-intro-text p {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        font-weight: 300;
+        margin: 0;
+        color: #000;
+    }
+    
+    /* Hide desktop elements on mobile */
+    .spotlight-bg-img,
+    .spotlight-titles-container,
+    .spotlight-images,
+    .spotlight-header {
+        display: none;
+    }
+    
+    /* Show slider on mobile/tablet */
+    .spotlight-slider {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 40px 0;
+    }
+    
+    .spotlight-slider-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 20px;
+        background: #f5f5f5;
+    }
+    
+    .spotlight-slider-track {
+        display: flex;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
+    }
+    
+    .spotlight-slide {
+        min-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .spotlight-slide-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .spotlight-slide-content {
+        padding: 30px 20px;
+        background: #fff;
+        border-radius: 0 0 20px 20px;
+    }
+    
+    .spotlight-slide-title {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        font-weight: 300;
+        color: #000;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .spotlight-slider-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        padding: 0 5px;
+        gap: 15px;
+    }
+    
+    .spotlight-slider-prev,
+    .spotlight-slider-next {
+        background: #ff5f38;
+        color: #fff;
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+        z-index: 10;
+        box-shadow: 0 2px 8px rgba(255, 95, 56, 0.3);
+    }
+    
+    .spotlight-slider-prev:hover,
+    .spotlight-slider-next:hover {
+        background: #ff8c5a;
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba(255, 95, 56, 0.4);
+    }
+    
+    .spotlight-slider-prev:active,
+    .spotlight-slider-next:active {
+        transform: scale(0.95);
+    }
+    
+    .spotlight-slider-prev:disabled,
+    .spotlight-slider-next:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        transform: none;
+        background: #ffb89a;
+    }
+    
+    .spotlight-slider-prev svg,
+    .spotlight-slider-next svg {
+        width: 20px;
+        height: 20px;
+        stroke: #fff;
+    }
+    
+    /* Progress bar instead of dots */
+    .spotlight-slider-progress {
+        flex: 1;
+        height: 4px;
+        background: #fff;
+        border-radius: 2px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid rgba(255, 95, 56, 0.2);
+    }
+    
+    .spotlight-slider-progress-bar {
+        height: 100%;
+        background: #ff5f38;
+        border-radius: 2px;
+        transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 0%;
+    }
 }
 
 /* --------------------
@@ -5465,7 +5753,7 @@ nav h4{
     border: 0;
     height: 1px;
     background: #e0e0e0;
-    margin: 12px 6vw 0px 6vw;
+    margin: 12px 6vw -12px 6vw;
 }
 
 #logo-section {
@@ -5481,7 +5769,7 @@ nav h4{
 
 #text-content {
     padding: 0px 6vw 60px 6vw;
-    margin-top: -8px;
+    margin-top: -20px;
 }
 
 #text-content h1 {
@@ -5503,6 +5791,116 @@ nav h4{
     line-height: 1.2;
     color: #555;
 }
+
+/* Responsive styles for #page2 - Tablet */
+@media (max-width: 1024px) {
+    #page2 {
+        height: auto;
+        min-height: 100vh;
+        padding: 4vw 3vw;
+    }
+    
+    #page2 header {
+        padding: 15px 4vw;
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    #logo-section {
+        font-size: 18px;
+    }
+    
+    #location {
+        font-size: 18px;
+    }
+    
+    .divider {
+        margin: 15px 4vw 20px 4vw;
+    }
+    
+    #text-content {
+        padding: 20px 4vw 40px 4vw;
+    }
+    
+    #text-content h1 {
+        font-size: 5vw;
+        max-width: 100%;
+        line-height: 1.1;
+    }
+}
+
+/* Responsive styles for #page2 - Mobile */
+@media (max-width: 768px) {
+    #page2 {
+        padding: 3vw 4vw;
+    }
+    
+    #page2 header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px 4vw;
+    }
+    
+    #logo-section {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    
+    #location {
+        font-size: 16px;
+    }
+    
+    .divider {
+        margin: 20px 4vw 25px 4vw;
+    }
+    
+    #text-content {
+        padding: 25px 4vw 40px 4vw;
+    }
+    
+    #text-content h1 {
+        font-size: 6.5vw;
+        line-height: 1.15;
+        letter-spacing: -0.3px;
+    }
+}
+
+/* Responsive styles for #page2 - Small Mobile */
+@media (max-width: 480px) {
+    #page2 {
+        padding: 4vw 5vw;
+    }
+    
+    #page2 header {
+        padding: 20px 5vw;
+        gap: 12px;
+    }
+    
+    #logo-section {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    #location {
+        font-size: 14px;
+    }
+    
+    .divider {
+        margin: 20px 5vw 25px 5vw;
+    }
+    
+    #text-content {
+        padding: 25px 5vw 40px 5vw;
+    }
+    
+    #text-content h1 {
+        font-size: 7.5vw;
+        line-height: 1.2;
+        letter-spacing: -0.2px;
+    }
+}
+
 img {
     width: 100%;
     height: 100%;
@@ -5954,6 +6352,185 @@ section{
     transition: opacity 0.3s ease;
     z-index: 2;
     opacity: 0;
+}
+
+/* Hide slider on desktop */
+.spotlight-slider {
+    display: none;
+}
+
+/* Responsive styles for Spotlight - Tablet and Mobile (Simple UI) */
+@media (max-width: 1024px) {
+    .spotlight {
+        height: auto;
+        min-height: 100vh;
+        padding: 60px 4vw !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .spotlight-intro-text-wrapper {
+        position: relative;
+        top: auto;
+        transform: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+    
+    .spotlight-intro-text {
+        position: relative;
+        transform: none !important;
+        opacity: 1 !important;
+        will-change: auto;
+        text-align: center;
+    }
+    
+    .spotlight-intro-text p {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        font-weight: 300;
+        margin: 0;
+        color: #000;
+    }
+    
+    /* Hide desktop elements on mobile */
+    .spotlight-bg-img,
+    .spotlight-titles-container,
+    .spotlight-images,
+    .spotlight-header {
+        display: none;
+    }
+    
+    /* Show slider on mobile/tablet */
+    .spotlight-slider {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 40px 0;
+    }
+    
+    .spotlight-slider-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 20px;
+        background: #f5f5f5;
+    }
+    
+    .spotlight-slider-track {
+        display: flex;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
+    }
+    
+    .spotlight-slide {
+        min-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .spotlight-slide-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .spotlight-slide-content {
+        padding: 30px 20px;
+        background: #fff;
+        border-radius: 0 0 20px 20px;
+    }
+    
+    .spotlight-slide-title {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        font-weight: 300;
+        color: #000;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .spotlight-slider-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        padding: 0 5px;
+        gap: 15px;
+    }
+    
+    .spotlight-slider-prev,
+    .spotlight-slider-next {
+        background: #ff5f38;
+        color: #fff;
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+        z-index: 10;
+        box-shadow: 0 2px 8px rgba(255, 95, 56, 0.3);
+    }
+    
+    .spotlight-slider-prev:hover,
+    .spotlight-slider-next:hover {
+        background: #ff8c5a;
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba(255, 95, 56, 0.4);
+    }
+    
+    .spotlight-slider-prev:active,
+    .spotlight-slider-next:active {
+        transform: scale(0.95);
+    }
+    
+    .spotlight-slider-prev:disabled,
+    .spotlight-slider-next:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        transform: none;
+        background: #ffb89a;
+    }
+    
+    .spotlight-slider-prev svg,
+    .spotlight-slider-next svg {
+        width: 20px;
+        height: 20px;
+        stroke: #fff;
+    }
+    
+    /* Progress bar instead of dots */
+    .spotlight-slider-progress {
+        flex: 1;
+        height: 4px;
+        background: #fff;
+        border-radius: 2px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid rgba(255, 95, 56, 0.2);
+    }
+    
+    .spotlight-slider-progress-bar {
+        height: 100%;
+        background: #ff5f38;
+        border-radius: 2px;
+        transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 0%;
+    }
 }
 
 /* --------------------
@@ -10425,7 +11002,7 @@ nav h4{
     border: 0;
     height: 1px;
     background: #e0e0e0;
-    margin: 12px 6vw 0px 6vw;
+    margin: 12px 6vw -12px 6vw;
 }
 
 #logo-section {
@@ -10441,7 +11018,7 @@ nav h4{
 
 #text-content {
     padding: 0px 6vw 60px 6vw;
-    margin-top: -8px;
+    margin-top: -20px;
 }
 
 #text-content h1 {
@@ -10463,6 +11040,116 @@ nav h4{
     line-height: 1.2;
     color: #555;
 }
+
+/* Responsive styles for #page2 - Tablet */
+@media (max-width: 1024px) {
+    #page2 {
+        height: auto;
+        min-height: 100vh;
+        padding: 4vw 3vw;
+    }
+    
+    #page2 header {
+        padding: 15px 4vw;
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    #logo-section {
+        font-size: 18px;
+    }
+    
+    #location {
+        font-size: 18px;
+    }
+    
+    .divider {
+        margin: 15px 4vw 20px 4vw;
+    }
+    
+    #text-content {
+        padding: 20px 4vw 40px 4vw;
+    }
+    
+    #text-content h1 {
+        font-size: 5vw;
+        max-width: 100%;
+        line-height: 1.1;
+    }
+}
+
+/* Responsive styles for #page2 - Mobile */
+@media (max-width: 768px) {
+    #page2 {
+        padding: 3vw 4vw;
+    }
+    
+    #page2 header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px 4vw;
+    }
+    
+    #logo-section {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    
+    #location {
+        font-size: 16px;
+    }
+    
+    .divider {
+        margin: 20px 4vw 25px 4vw;
+    }
+    
+    #text-content {
+        padding: 25px 4vw 40px 4vw;
+    }
+    
+    #text-content h1 {
+        font-size: 6.5vw;
+        line-height: 1.15;
+        letter-spacing: -0.3px;
+    }
+}
+
+/* Responsive styles for #page2 - Small Mobile */
+@media (max-width: 480px) {
+    #page2 {
+        padding: 4vw 5vw;
+    }
+    
+    #page2 header {
+        padding: 20px 5vw;
+        gap: 12px;
+    }
+    
+    #logo-section {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    #location {
+        font-size: 14px;
+    }
+    
+    .divider {
+        margin: 20px 5vw 25px 5vw;
+    }
+    
+    #text-content {
+        padding: 25px 5vw 40px 5vw;
+    }
+    
+    #text-content h1 {
+        font-size: 7.5vw;
+        line-height: 1.2;
+        letter-spacing: -0.2px;
+    }
+}
+
 img {
     width: 100%;
     height: 100%;
@@ -10914,6 +11601,185 @@ section{
     transition: opacity 0.3s ease;
     z-index: 2;
     opacity: 0;
+}
+
+/* Hide slider on desktop */
+.spotlight-slider {
+    display: none;
+}
+
+/* Responsive styles for Spotlight - Tablet and Mobile (Simple UI) */
+@media (max-width: 1024px) {
+    .spotlight {
+        height: auto;
+        min-height: 100vh;
+        padding: 60px 4vw !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .spotlight-intro-text-wrapper {
+        position: relative;
+        top: auto;
+        transform: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+    
+    .spotlight-intro-text {
+        position: relative;
+        transform: none !important;
+        opacity: 1 !important;
+        will-change: auto;
+        text-align: center;
+    }
+    
+    .spotlight-intro-text p {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        font-weight: 300;
+        margin: 0;
+        color: #000;
+    }
+    
+    /* Hide desktop elements on mobile */
+    .spotlight-bg-img,
+    .spotlight-titles-container,
+    .spotlight-images,
+    .spotlight-header {
+        display: none;
+    }
+    
+    /* Show slider on mobile/tablet */
+    .spotlight-slider {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 40px 0;
+    }
+    
+    .spotlight-slider-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 20px;
+        background: #f5f5f5;
+    }
+    
+    .spotlight-slider-track {
+        display: flex;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
+    }
+    
+    .spotlight-slide {
+        min-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .spotlight-slide-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .spotlight-slide-content {
+        padding: 30px 20px;
+        background: #fff;
+        border-radius: 0 0 20px 20px;
+    }
+    
+    .spotlight-slide-title {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        font-weight: 300;
+        color: #000;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .spotlight-slider-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        padding: 0 5px;
+        gap: 15px;
+    }
+    
+    .spotlight-slider-prev,
+    .spotlight-slider-next {
+        background: #ff5f38;
+        color: #fff;
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+        z-index: 10;
+        box-shadow: 0 2px 8px rgba(255, 95, 56, 0.3);
+    }
+    
+    .spotlight-slider-prev:hover,
+    .spotlight-slider-next:hover {
+        background: #ff8c5a;
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba(255, 95, 56, 0.4);
+    }
+    
+    .spotlight-slider-prev:active,
+    .spotlight-slider-next:active {
+        transform: scale(0.95);
+    }
+    
+    .spotlight-slider-prev:disabled,
+    .spotlight-slider-next:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        transform: none;
+        background: #ffb89a;
+    }
+    
+    .spotlight-slider-prev svg,
+    .spotlight-slider-next svg {
+        width: 20px;
+        height: 20px;
+        stroke: #fff;
+    }
+    
+    /* Progress bar instead of dots */
+    .spotlight-slider-progress {
+        flex: 1;
+        height: 4px;
+        background: #fff;
+        border-radius: 2px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid rgba(255, 95, 56, 0.2);
+    }
+    
+    .spotlight-slider-progress-bar {
+        height: 100%;
+        background: #ff5f38;
+        border-radius: 2px;
+        transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 0%;
+    }
 }
 
 /* --------------------
@@ -15385,7 +16251,7 @@ nav h4{
     border: 0;
     height: 1px;
     background: #e0e0e0;
-    margin: 12px 6vw 0px 6vw;
+    margin: 12px 6vw -12px 6vw;
 }
 
 #logo-section {
@@ -15401,7 +16267,7 @@ nav h4{
 
 #text-content {
     padding: 0px 6vw 60px 6vw;
-    margin-top: -8px;
+    margin-top: -20px;
 }
 
 #text-content h1 {
@@ -15423,6 +16289,116 @@ nav h4{
     line-height: 1.2;
     color: #555;
 }
+
+/* Responsive styles for #page2 - Tablet */
+@media (max-width: 1024px) {
+    #page2 {
+        height: auto;
+        min-height: 100vh;
+        padding: 4vw 3vw;
+    }
+    
+    #page2 header {
+        padding: 15px 4vw;
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    #logo-section {
+        font-size: 18px;
+    }
+    
+    #location {
+        font-size: 18px;
+    }
+    
+    .divider {
+        margin: 15px 4vw 20px 4vw;
+    }
+    
+    #text-content {
+        padding: 20px 4vw 40px 4vw;
+    }
+    
+    #text-content h1 {
+        font-size: 5vw;
+        max-width: 100%;
+        line-height: 1.1;
+    }
+}
+
+/* Responsive styles for #page2 - Mobile */
+@media (max-width: 768px) {
+    #page2 {
+        padding: 3vw 4vw;
+    }
+    
+    #page2 header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px 4vw;
+    }
+    
+    #logo-section {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    
+    #location {
+        font-size: 16px;
+    }
+    
+    .divider {
+        margin: 20px 4vw 25px 4vw;
+    }
+    
+    #text-content {
+        padding: 25px 4vw 40px 4vw;
+    }
+    
+    #text-content h1 {
+        font-size: 6.5vw;
+        line-height: 1.15;
+        letter-spacing: -0.3px;
+    }
+}
+
+/* Responsive styles for #page2 - Small Mobile */
+@media (max-width: 480px) {
+    #page2 {
+        padding: 4vw 5vw;
+    }
+    
+    #page2 header {
+        padding: 20px 5vw;
+        gap: 12px;
+    }
+    
+    #logo-section {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    #location {
+        font-size: 14px;
+    }
+    
+    .divider {
+        margin: 20px 5vw 25px 5vw;
+    }
+    
+    #text-content {
+        padding: 25px 5vw 40px 5vw;
+    }
+    
+    #text-content h1 {
+        font-size: 7.5vw;
+        line-height: 1.2;
+        letter-spacing: -0.2px;
+    }
+}
+
 img {
     width: 100%;
     height: 100%;
@@ -15874,6 +16850,185 @@ section{
     transition: opacity 0.3s ease;
     z-index: 2;
     opacity: 0;
+}
+
+/* Hide slider on desktop */
+.spotlight-slider {
+    display: none;
+}
+
+/* Responsive styles for Spotlight - Tablet and Mobile (Simple UI) */
+@media (max-width: 1024px) {
+    .spotlight {
+        height: auto;
+        min-height: 100vh;
+        padding: 60px 4vw !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .spotlight-intro-text-wrapper {
+        position: relative;
+        top: auto;
+        transform: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+    
+    .spotlight-intro-text {
+        position: relative;
+        transform: none !important;
+        opacity: 1 !important;
+        will-change: auto;
+        text-align: center;
+    }
+    
+    .spotlight-intro-text p {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        font-weight: 300;
+        margin: 0;
+        color: #000;
+    }
+    
+    /* Hide desktop elements on mobile */
+    .spotlight-bg-img,
+    .spotlight-titles-container,
+    .spotlight-images,
+    .spotlight-header {
+        display: none;
+    }
+    
+    /* Show slider on mobile/tablet */
+    .spotlight-slider {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 40px 0;
+    }
+    
+    .spotlight-slider-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 20px;
+        background: #f5f5f5;
+    }
+    
+    .spotlight-slider-track {
+        display: flex;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
+    }
+    
+    .spotlight-slide {
+        min-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .spotlight-slide-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .spotlight-slide-content {
+        padding: 30px 20px;
+        background: #fff;
+        border-radius: 0 0 20px 20px;
+    }
+    
+    .spotlight-slide-title {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        font-weight: 300;
+        color: #000;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .spotlight-slider-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        padding: 0 5px;
+        gap: 15px;
+    }
+    
+    .spotlight-slider-prev,
+    .spotlight-slider-next {
+        background: #ff5f38;
+        color: #fff;
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+        z-index: 10;
+        box-shadow: 0 2px 8px rgba(255, 95, 56, 0.3);
+    }
+    
+    .spotlight-slider-prev:hover,
+    .spotlight-slider-next:hover {
+        background: #ff8c5a;
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba(255, 95, 56, 0.4);
+    }
+    
+    .spotlight-slider-prev:active,
+    .spotlight-slider-next:active {
+        transform: scale(0.95);
+    }
+    
+    .spotlight-slider-prev:disabled,
+    .spotlight-slider-next:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        transform: none;
+        background: #ffb89a;
+    }
+    
+    .spotlight-slider-prev svg,
+    .spotlight-slider-next svg {
+        width: 20px;
+        height: 20px;
+        stroke: #fff;
+    }
+    
+    /* Progress bar instead of dots */
+    .spotlight-slider-progress {
+        flex: 1;
+        height: 4px;
+        background: #fff;
+        border-radius: 2px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid rgba(255, 95, 56, 0.2);
+    }
+    
+    .spotlight-slider-progress-bar {
+        height: 100%;
+        background: #ff5f38;
+        border-radius: 2px;
+        transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 0%;
+    }
 }
 
 /* --------------------
@@ -20345,7 +21500,7 @@ nav h4{
     border: 0;
     height: 1px;
     background: #e0e0e0;
-    margin: 12px 6vw 0px 6vw;
+    margin: 12px 6vw -12px 6vw;
 }
 
 #logo-section {
@@ -20361,7 +21516,7 @@ nav h4{
 
 #text-content {
     padding: 0px 6vw 60px 6vw;
-    margin-top: -8px;
+    margin-top: -20px;
 }
 
 #text-content h1 {
@@ -20383,6 +21538,116 @@ nav h4{
     line-height: 1.2;
     color: #555;
 }
+
+/* Responsive styles for #page2 - Tablet */
+@media (max-width: 1024px) {
+    #page2 {
+        height: auto;
+        min-height: 100vh;
+        padding: 4vw 3vw;
+    }
+    
+    #page2 header {
+        padding: 15px 4vw;
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    #logo-section {
+        font-size: 18px;
+    }
+    
+    #location {
+        font-size: 18px;
+    }
+    
+    .divider {
+        margin: 15px 4vw 20px 4vw;
+    }
+    
+    #text-content {
+        padding: 20px 4vw 40px 4vw;
+    }
+    
+    #text-content h1 {
+        font-size: 5vw;
+        max-width: 100%;
+        line-height: 1.1;
+    }
+}
+
+/* Responsive styles for #page2 - Mobile */
+@media (max-width: 768px) {
+    #page2 {
+        padding: 3vw 4vw;
+    }
+    
+    #page2 header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px 4vw;
+    }
+    
+    #logo-section {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    
+    #location {
+        font-size: 16px;
+    }
+    
+    .divider {
+        margin: 20px 4vw 25px 4vw;
+    }
+    
+    #text-content {
+        padding: 25px 4vw 40px 4vw;
+    }
+    
+    #text-content h1 {
+        font-size: 6.5vw;
+        line-height: 1.15;
+        letter-spacing: -0.3px;
+    }
+}
+
+/* Responsive styles for #page2 - Small Mobile */
+@media (max-width: 480px) {
+    #page2 {
+        padding: 4vw 5vw;
+    }
+    
+    #page2 header {
+        padding: 20px 5vw;
+        gap: 12px;
+    }
+    
+    #logo-section {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    #location {
+        font-size: 14px;
+    }
+    
+    .divider {
+        margin: 20px 5vw 25px 5vw;
+    }
+    
+    #text-content {
+        padding: 25px 5vw 40px 5vw;
+    }
+    
+    #text-content h1 {
+        font-size: 7.5vw;
+        line-height: 1.2;
+        letter-spacing: -0.2px;
+    }
+}
+
 img {
     width: 100%;
     height: 100%;
@@ -20834,6 +22099,185 @@ section{
     transition: opacity 0.3s ease;
     z-index: 2;
     opacity: 0;
+}
+
+/* Hide slider on desktop */
+.spotlight-slider {
+    display: none;
+}
+
+/* Responsive styles for Spotlight - Tablet and Mobile (Simple UI) */
+@media (max-width: 1024px) {
+    .spotlight {
+        height: auto;
+        min-height: 100vh;
+        padding: 60px 4vw !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .spotlight-intro-text-wrapper {
+        position: relative;
+        top: auto;
+        transform: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+    
+    .spotlight-intro-text {
+        position: relative;
+        transform: none !important;
+        opacity: 1 !important;
+        will-change: auto;
+        text-align: center;
+    }
+    
+    .spotlight-intro-text p {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        font-weight: 300;
+        margin: 0;
+        color: #000;
+    }
+    
+    /* Hide desktop elements on mobile */
+    .spotlight-bg-img,
+    .spotlight-titles-container,
+    .spotlight-images,
+    .spotlight-header {
+        display: none;
+    }
+    
+    /* Show slider on mobile/tablet */
+    .spotlight-slider {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 40px 0;
+    }
+    
+    .spotlight-slider-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 20px;
+        background: #f5f5f5;
+    }
+    
+    .spotlight-slider-track {
+        display: flex;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
+    }
+    
+    .spotlight-slide {
+        min-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .spotlight-slide-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .spotlight-slide-content {
+        padding: 30px 20px;
+        background: #fff;
+        border-radius: 0 0 20px 20px;
+    }
+    
+    .spotlight-slide-title {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        font-weight: 300;
+        color: #000;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .spotlight-slider-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        padding: 0 5px;
+        gap: 15px;
+    }
+    
+    .spotlight-slider-prev,
+    .spotlight-slider-next {
+        background: #ff5f38;
+        color: #fff;
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+        z-index: 10;
+        box-shadow: 0 2px 8px rgba(255, 95, 56, 0.3);
+    }
+    
+    .spotlight-slider-prev:hover,
+    .spotlight-slider-next:hover {
+        background: #ff8c5a;
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba(255, 95, 56, 0.4);
+    }
+    
+    .spotlight-slider-prev:active,
+    .spotlight-slider-next:active {
+        transform: scale(0.95);
+    }
+    
+    .spotlight-slider-prev:disabled,
+    .spotlight-slider-next:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        transform: none;
+        background: #ffb89a;
+    }
+    
+    .spotlight-slider-prev svg,
+    .spotlight-slider-next svg {
+        width: 20px;
+        height: 20px;
+        stroke: #fff;
+    }
+    
+    /* Progress bar instead of dots */
+    .spotlight-slider-progress {
+        flex: 1;
+        height: 4px;
+        background: #fff;
+        border-radius: 2px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid rgba(255, 95, 56, 0.2);
+    }
+    
+    .spotlight-slider-progress-bar {
+        height: 100%;
+        background: #ff5f38;
+        border-radius: 2px;
+        transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 0%;
+    }
 }
 
 /* --------------------
