@@ -334,5 +334,56 @@
             });
         }
     </script>
+    
+    <!-- Mobile Menu Toggle - Standalone Script -->
+    <script>
+        // Simple mobile menu toggle that works on all pages
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navLinks = document.getElementById('navLinks');
+            const nav = document.getElementById('main-nav');
+
+            if (navToggle && navLinks) {
+                // Toggle menu on button click
+                navToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navToggle.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                });
+
+                // Close menu when clicking on a link
+                const links = navLinks.querySelectorAll('.nav-link');
+                links.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navToggle.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (navLinks.classList.contains('active') && 
+                        nav && !nav.contains(e.target)) {
+                        navToggle.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                // Navbar scroll effect
+                if (nav) {
+                    window.addEventListener('scroll', function() {
+                        if (window.pageYOffset > 50) {
+                            nav.classList.add('scrolled');
+                        } else {
+                            nav.classList.remove('scrolled');
+                        }
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 </html>

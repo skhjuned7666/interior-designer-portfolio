@@ -136,21 +136,25 @@
               </div>
               <div class="services-process-steps">
                   <div class="process-step">
+                      <div class="process-step-bg"></div>
                       <span class="process-step-number">01</span>
                       <h3>Discovery & Vision</h3>
                       <p>We start with conversations, site visits, and understanding your goals, brand, and constraints.</p>
                   </div>
                   <div class="process-step">
+                      <div class="process-step-bg"></div>
                       <span class="process-step-number">02</span>
                       <h3>Concept & Design</h3>
                       <p>We develop moodboards, layouts, and design directions that translate your vision into a clear concept.</p>
                   </div>
                   <div class="process-step">
+                      <div class="process-step-bg"></div>
                       <span class="process-step-number">03</span>
                       <h3>Development & Detailing</h3>
                       <p>We refine materials, lighting, furniture, and technical details so every element works together.</p>
                   </div>
                   <div class="process-step">
+                      <div class="process-step-bg"></div>
                       <span class="process-step-number">04</span>
                       <h3>Execution & Turnkey</h3>
                       <p>Our team manages execution, coordinates vendors, and oversees quality until the space is ready.</p>
@@ -261,80 +265,196 @@
             document.documentElement.style.overflow = 'auto';
 
             // ----------------------------
-            // 1. Lateral Pin Indicator
+            // 1. Lateral Pin Indicator (Large Screens Only)
             // ----------------------------
             const list = document.querySelector(".list");
             const fill = document.querySelector(".fill");
             const listItems = gsap.utils.toArray("li", list);
             const slides = gsap.utils.toArray(".slide");
 
-            if (listItems.length > 0 && slides.length > 0) {
-                // initial state: all slides hidden & slightly zoomed out
-                gsap.set(slides, { autoAlpha: 0, scale: 0.2, y: 10 });
-
-                const tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: ".pin-section",
-                        start: "top top",
-                        end: "+=" + listItems.length * 50 + "%",
-                        pin: true,
-                        scrub: true
-                    }
-                });
-
-                // First element visible, set the marker
-                if (fill) {
-                    gsap.set(fill, {
-                        scaleY: 1 / listItems.length,
-                        transformOrigin: "top left"
-                    });
-                }
-
-                listItems.forEach((item, i) => {
-                    const previousItem = listItems[i - 1];
-                    if (previousItem) {
-                        tl.set(item, { color: "#ff5f38" }, 0.5 * i)
-                          .fromTo(
-                              slides[i],
-                              { autoAlpha: 0, scale: 0.8, y: 30 },
-                              {
-                                  autoAlpha: 1,
-                                  scale: 1,
-                                  y: 0,
-                                  duration: 0.45,
-                                  ease: "power3.out"
-                              },
-                              "<"
-                          )
-                          .set(previousItem, { color: "#666" }, "<")
-                          .to(
-                              slides[i - 1],
-                              {
-                                  autoAlpha: 0,
-                                  scale: 0.8,
-                                  y: -20,
-                                  duration: 0.4,
-                                  ease: "power3.inOut"
-                              },
-                              "<"
-                          );
-                    } else {
-                        gsap.set(item, { color: "#ff5f38" });
-                        gsap.set(slides[i], { autoAlpha: 1, scale: 1, y: 0 });
-                    }
-                });
-
-                tl.to(
-                    fill,
-                    {
-                        scaleY: 1,
-                        transformOrigin: "top left",
-                        ease: "none",
-                        duration: tl.duration()
-                    },
-                    0
-                ).to({}, {}); // add a small pause at the end
+            // Function to check if screen is large (desktop)
+            function isLargeScreen() {
+                return window.innerWidth > 1024;
             }
+
+            // Function to initialize pin animation (for large screens)
+            function initPinAnimation() {
+                if (listItems.length > 0 && slides.length > 0 && isLargeScreen()) {
+                    // Kill any existing ScrollTriggers for this section
+                    ScrollTrigger.getAll().forEach(trigger => {
+                        if (trigger.vars && trigger.vars.trigger && trigger.vars.trigger.classList && trigger.vars.trigger.classList.contains('pin-section')) {
+                            trigger.kill();
+                        }
+                    });
+
+                    // initial state: all slides hidden & slightly zoomed out
+                    gsap.set(slides, { autoAlpha: 0, scale: 0.2, y: 10 });
+
+                    const tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: ".pin-section",
+                            start: "top top",
+                            end: "+=" + listItems.length * 50 + "%",
+                            pin: true,
+                            scrub: true,
+                            invalidateOnRefresh: true
+                        }
+                    });
+
+                    // First element visible, set the marker
+                    if (fill) {
+                        gsap.set(fill, {
+                            scaleY: 1 / listItems.length,
+                            transformOrigin: "top left"
+                        });
+                    }
+
+                    listItems.forEach((item, i) => {
+                        const previousItem = listItems[i - 1];
+                        if (previousItem) {
+                            tl.set(item, { color: "#ff5f38" }, 0.5 * i)
+                              .fromTo(
+                                  slides[i],
+                                  { autoAlpha: 0, scale: 0.8, y: 30 },
+                                  {
+                                      autoAlpha: 1,
+                                      scale: 1,
+                                      y: 0,
+                                      duration: 0.45,
+                                      ease: "power3.out"
+                                  },
+                                  "<"
+                              )
+                              .set(previousItem, { color: "#666" }, "<")
+                              .to(
+                                  slides[i - 1],
+                                  {
+                                      autoAlpha: 0,
+                                      scale: 0.8,
+                                      y: -20,
+                                      duration: 0.4,
+                                      ease: "power3.inOut"
+                                  },
+                                  "<"
+                              );
+                        } else {
+                            gsap.set(item, { color: "#ff5f38" });
+                            gsap.set(slides[i], { autoAlpha: 1, scale: 1, y: 0 });
+                        }
+                    });
+
+                    tl.to(
+                        fill,
+                        {
+                            scaleY: 1,
+                            transformOrigin: "top left",
+                            ease: "none",
+                            duration: tl.duration()
+                        },
+                        0
+                    ).to({}, {}); // add a small pause at the end
+                }
+            }
+
+            // Function to show simple cards slider (for tablet/mobile)
+            function initMobileCards() {
+                if (listItems.length > 0 && slides.length > 0 && !isLargeScreen()) {
+                    // Kill ALL ScrollTriggers related to pin-section to prevent any pinning
+                    ScrollTrigger.getAll().forEach(trigger => {
+                        const triggerElement = trigger.vars && trigger.vars.trigger;
+                        if (triggerElement) {
+                            // Check if it's the pin-section or any element inside it
+                            if (triggerElement.classList && triggerElement.classList.contains('pin-section')) {
+                                trigger.kill();
+                            } else if (triggerElement.closest && triggerElement.closest('.pin-section')) {
+                                trigger.kill();
+                            }
+                        }
+                    });
+
+                    // Remove any pinning from the pin-section element
+                    const pinSection = document.querySelector('.pin-section');
+                    if (pinSection) {
+                        gsap.set(pinSection, {
+                            clearProps: "all"
+                        });
+                        // Remove any inline styles that might interfere
+                        pinSection.style.position = '';
+                        pinSection.style.top = '';
+                        pinSection.style.left = '';
+                        pinSection.style.width = '';
+                        pinSection.style.height = '';
+                    }
+
+                    // Make all slides visible and stack them vertically
+                    slides.forEach((slide, index) => {
+                        // Clear all GSAP properties first
+                        gsap.killTweensOf(slide);
+                        gsap.set(slide, {
+                            clearProps: "all"
+                        });
+                        
+                        // Set final state
+                        gsap.set(slide, {
+                            autoAlpha: 1,
+                            opacity: 1,
+                            visibility: 'visible',
+                            scale: 1,
+                            y: 0,
+                            x: 0,
+                            rotation: 0
+                        });
+
+                        // Remove any inline transforms
+                        slide.style.transform = '';
+                        slide.style.position = '';
+                        slide.style.top = '';
+                        slide.style.right = '';
+                    });
+
+                    // Reset list items color
+                    listItems.forEach(item => {
+                        gsap.set(item, { color: "#2f2f2f" });
+                    });
+
+                    // Refresh ScrollTrigger to ensure everything is updated
+                    ScrollTrigger.refresh();
+                }
+            }
+
+            // Initialize based on screen size
+            if (isLargeScreen()) {
+                initPinAnimation();
+            } else {
+                initMobileCards();
+            }
+
+            // Handle window resize
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    // Kill all existing ScrollTriggers related to pin-section first
+                    ScrollTrigger.getAll().forEach(trigger => {
+                        const triggerElement = trigger.vars && trigger.vars.trigger;
+                        if (triggerElement) {
+                            if (triggerElement.classList && triggerElement.classList.contains('pin-section')) {
+                                trigger.kill();
+                            } else if (triggerElement.closest && triggerElement.closest('.pin-section')) {
+                                trigger.kill();
+                            }
+                        }
+                    });
+                    
+                    ScrollTrigger.refresh();
+                    
+                    if (isLargeScreen()) {
+                        initPinAnimation();
+                    } else {
+                        initMobileCards();
+                    }
+                }, 250);
+            });
 
             // ----------------------------
             // 2. Process cards reveal
@@ -384,27 +504,78 @@
                     rotation: isMobile ? 0 : 5
                 });
 
-                // Animate all cards to their final positions
-                gsap.to(processSteps, {
-                    x: 0,
-                    y: 0,
-                    autoAlpha: 1,
-                    scale: 1,
-                    rotation: 0,
-                    duration: isMobile ? 1.0 : 1.2,
-                    stagger: isMobile ? 0.1 : 0.15,
-                    ease: "power3.out",
+                // Create timeline for forward and reverse animation
+                const cardAnimation = gsap.timeline({
                     scrollTrigger: {
                         trigger: ".services-process-section",
-                        start: "top 50%", // Section 50% visible hone par animation start - user ko clearly dikhega
+                        start: "top 50%", // Section 50% visible hone par animation start
                         end: "top 10%",
-                        toggleActions: "play none none none",
+                        toggleActions: "play none reverse none", // Forward play, reverse on scroll up
                         markers: false, // Set to true for debugging
-                        once: true, // Animation sirf ek baar play ho
                         onEnter: () => {
+                            // Forward animation - cards slide in
+                            gsap.to(processSteps, {
+                                x: 0,
+                                y: 0,
+                                autoAlpha: 1,
+                                scale: 1,
+                                rotation: 0,
+                                duration: isMobile ? 1.0 : 1.2,
+                                stagger: isMobile ? 0.1 : 0.15,
+                                ease: "power3.out"
+                            });
                             // Ensure cards are visible after animation
                             processSteps.forEach(step => {
                                 step.style.visibility = 'visible';
+                            });
+                        },
+                        onLeaveBack: () => {
+                            // Reverse animation - cards slide back to original positions
+                            const vw = window.innerWidth;
+                            const vh = window.innerHeight;
+                            const isMobile = vw < 768;
+                            
+                            gsap.to(processSteps[0], {
+                                x: isMobile ? -vw * 1.5 : -vw,
+                                y: 0,
+                                autoAlpha: 0,
+                                scale: 0.7,
+                                rotation: isMobile ? 0 : -5,
+                                duration: isMobile ? 0.8 : 1.0,
+                                ease: "power3.in"
+                            });
+                            
+                            gsap.to(processSteps[1], {
+                                x: 0,
+                                y: isMobile ? -vh * 1.5 : -vh,
+                                autoAlpha: 0,
+                                scale: 0.7,
+                                rotation: isMobile ? 0 : 5,
+                                duration: isMobile ? 0.8 : 1.0,
+                                delay: 0.1,
+                                ease: "power3.in"
+                            });
+                            
+                            gsap.to(processSteps[2], {
+                                x: 0,
+                                y: isMobile ? vh * 1.5 : vh,
+                                autoAlpha: 0,
+                                scale: 0.7,
+                                rotation: isMobile ? 0 : -5,
+                                duration: isMobile ? 0.8 : 1.0,
+                                delay: 0.2,
+                                ease: "power3.in"
+                            });
+                            
+                            gsap.to(processSteps[3], {
+                                x: isMobile ? vw * 1.5 : vw,
+                                y: 0,
+                                autoAlpha: 0,
+                                scale: 0.7,
+                                rotation: isMobile ? 0 : 5,
+                                duration: isMobile ? 0.8 : 1.0,
+                                delay: 0.3,
+                                ease: "power3.in"
                             });
                         }
                     }
@@ -412,18 +583,18 @@
             }
 
             // ----------------------------
-            // 3. FAQ items subtle fade / slide
+            // 3. FAQ items fade / slide from left to right
             // ----------------------------
             const faqItems = gsap.utils.toArray(".faq-item");
 
             if (faqItems.length) {
-                gsap.set(faqItems, { autoAlpha: 0, y: 30 });
+                gsap.set(faqItems, { autoAlpha: 0, x: -50 }); // Start from left side
 
                 faqItems.forEach((item) => {
                     gsap.to(item, {
                         autoAlpha: 1,
-                        y: 0,
-                        duration: 0.5,
+                        x: 0, // Move to original position (left to right)
+                        duration: 0.8,
                         ease: "power2.out",
                         scrollTrigger: {
                             trigger: item,
@@ -432,6 +603,57 @@
                         }
                     });
                 });
+            }
+        });
+    </script>
+    
+    <!-- Mobile Menu Toggle - Standalone Script -->
+    <script>
+        // Simple mobile menu toggle that works on all pages
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navLinks = document.getElementById('navLinks');
+            const nav = document.getElementById('main-nav');
+
+            if (navToggle && navLinks) {
+                // Toggle menu on button click
+                navToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navToggle.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                });
+
+                // Close menu when clicking on a link
+                const links = navLinks.querySelectorAll('.nav-link');
+                links.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navToggle.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (navLinks.classList.contains('active') && 
+                        nav && !nav.contains(e.target)) {
+                        navToggle.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                // Navbar scroll effect
+                if (nav) {
+                    window.addEventListener('scroll', function() {
+                        if (window.pageYOffset > 50) {
+                            nav.classList.add('scrolled');
+                        } else {
+                            nav.classList.remove('scrolled');
+                        }
+                    });
+                }
             }
         });
     </script>
