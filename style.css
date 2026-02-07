@@ -1160,7 +1160,8 @@ footer {
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    font-size: 18vw;
+    max-width: 100%;
+    font-size: clamp(80px, 18vw, 320px);
     font-weight: 600;
     line-height: 1;
     white-space: nowrap;
@@ -1170,27 +1171,249 @@ footer {
     font-family: nb;
     opacity: 1;
     text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0 20px;
 }
 
 /* --------------------
    Footer Responsive
 -------------------- */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     footer {
-        padding: 40px 24px;
+        padding: 50px 40px;
+        min-height: auto;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px 30px;
+    }
+
+    .footer-social {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-social a {
+        margin-bottom: 10px;
+    }
+
+    .footer-terms {
+        margin-top: 40px;
+        text-align: left;
+    }
+
+    .footer-heading {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+
+    .footer-brand {
+        font-size: clamp(40px, 15vw, 120px);
+        bottom: 20px;
+        opacity: 0.9;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 40px 24px 80px;
+        min-height: auto;
     }
 
     .footer-top {
         grid-template-columns: 1fr;
-    }
-
-    .footer-brand {
-        font-size: 32vw;
-        bottom: -80px;
+        gap: 40px;
     }
 
     .footer-heading {
-        font-size: 36px;
+        font-size: clamp(28px, 8vw, 36px);
+        margin-bottom: 30px;
+        line-height: 1.2;
+    }
+
+    .locations,
+    .business {
+        font-size: 15px;
+        margin-bottom: 30px;
+        line-height: 1.8;
+    }
+
+    .newsletter {
+        margin-top: 20px;
+    }
+
+    .newsletter label {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .newsletter-input {
+        max-width: 100%;
+        padding-bottom: 8px;
+    }
+
+    .newsletter-input input {
+        font-size: 15px;
+        padding: 8px 0;
+    }
+
+    .newsletter-input span {
+        font-size: 18px;
+    }
+
+    .footer-nav {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px 20px;
+        width: 100%;
+    }
+
+    .footer-nav a {
+        font-size: 15px;
+        margin-bottom: 0;
+        padding: 8px 0;
+        text-align: left;
+    }
+
+    .footer-social {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 40px;
+        width: 100%;
+        align-items: start;
+    }
+
+    .footer-social a {
+        font-size: 15px;
+        margin-bottom: 0;
+        padding: 8px 0;
+    }
+
+    .footer-terms {
+        font-size: 13px;
+        margin-top: 0;
+        line-height: 1.8;
+        text-align: right;
+        opacity: 0.8;
+        grid-column: 2;
+        grid-row: 1 / -1;
+        align-self: start;
+    }
+
+    .footer-brand {
+        font-size: clamp(35px, 18vw, 100px);
+        bottom: 30px;
+        opacity: 0.75;
+        max-width: 100%;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 35px 20px 100px;
+    }
+
+    .footer-top {
+        gap: 35px;
+    }
+
+    .footer-heading {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .locations,
+    .business {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    .newsletter {
+        margin-top: 15px;
+    }
+
+    .newsletter label {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .newsletter-input {
+        padding-bottom: 10px;
+    }
+
+    .newsletter-input input {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    .newsletter-input span {
+        font-size: 16px;
+        padding-left: 8px;
+    }
+
+    .footer-nav {
+        margin-top: 5px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px 15px;
+        width: 100%;
+    }
+
+    .footer-nav a {
+        font-size: 14px;
+        margin-bottom: 0;
+        padding: 8px 0;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+    }
+
+    .footer-social {
+        margin-top: 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 30px;
+        width: 100%;
+        align-items: start;
+    }
+
+    .footer-social a {
+        font-size: 14px;
+        margin-bottom: 0;
+        padding: 8px 0;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-terms {
+        font-size: 12px;
+        margin-top: 0;
+        line-height: 1.8;
+        text-align: right;
+        opacity: 0.8;
+        grid-column: 2;
+        grid-row: 1 / -1;
+        align-self: start;
+    }
+
+    .footer-brand {
+        font-size: clamp(28px, 20vw, 80px);
+        bottom: 40px;
+        opacity: 0.6;
+        letter-spacing: -3px;
+        max-width: 100%;
+        overflow: hidden;
+        padding: 0 10px;
+        box-sizing: border-box;
     }
 }
 
