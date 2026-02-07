@@ -327,8 +327,80 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 250);
     });
 
+    // Setup mobile cards vertical scroll with left/right slide animations
+    function setupMobileCardsScroll() {
+        const cardsContainer = document.querySelector(".m-cards");
+        const cards = document.querySelectorAll(".m-card");
+        
+        if (!cardsContainer || cards.length === 0 || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+        
+        // Kill any existing ScrollTriggers for m-cards
+        ScrollTrigger.getAll().forEach(trigger => {
+            const triggerElement = trigger.vars && trigger.vars.trigger;
+            if (triggerElement && triggerElement.closest && triggerElement.closest('.m-cards')) {
+                trigger.kill();
+            }
+        });
+        
+        // Reset all GSAP transforms and set initial states
+        cards.forEach((card, index) => {
+            // Clear all transforms
+            gsap.set(card, { clearProps: "all" });
+            const imgWrapper = card.querySelector(".m-card-img");
+            const img = card.querySelector(".m-card-img img");
+            const cardContent = card.querySelector(".m-card-content");
+            const cardTitle = card.querySelector(".m-card-title");
+            const cardDescription = card.querySelector(".m-card-description");
+            
+            if (imgWrapper) gsap.set(imgWrapper, { clearProps: "all" });
+            if (img) gsap.set(img, { clearProps: "all" });
+            if (cardContent) gsap.set(cardContent, { clearProps: "all" });
+            if (cardTitle) gsap.set(cardTitle, { clearProps: "all" });
+            if (cardDescription) gsap.set(cardDescription, { clearProps: "all" });
+            
+            // Set initial position - alternate left/right
+            const isEven = index % 2 === 0;
+            const xOffset = isEven ? -100 : 100; // Even index = left, Odd index = right
+            
+            gsap.set(card, {
+                x: xOffset + "%",
+                opacity: 0
+            });
+            
+            // Animate card sliding in from left or right
+            ScrollTrigger.create({
+                trigger: card,
+                start: "top 80%",
+                end: "top 20%",
+                onEnter: () => {
+                    gsap.to(card, {
+                        x: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: "power3.out"
+                    });
+                },
+                onLeaveBack: () => {
+                    gsap.to(card, {
+                        x: xOffset + "%",
+                        opacity: 0,
+                        duration: 0.6,
+                        ease: "power3.in"
+                    });
+                }
+            });
+        });
+    }
+
     // Marquee Cards Animation
     function initMarqueeAnimation() {
+        // Skip animations on tablet and mobile (<= 1024px)
+        if (window.innerWidth <= 1024) {
+            // Setup simple horizontal scroll for mobile/tablet
+            setupMobileCardsScroll();
+            return;
+        }
+
         // Simple SplitText alternative for character splitting
         function splitText(element, options = {}) {
             const charsClass = options.charsClass || 'char';
@@ -518,6 +590,26 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Initialize marquee animation
     initMarqueeAnimation();
+    
+    // Handle resize for m-cards
+    let mCardsResizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(mCardsResizeTimer);
+        mCardsResizeTimer = setTimeout(() => {
+            // Kill all m-cards related ScrollTriggers
+            if (typeof ScrollTrigger !== 'undefined') {
+                ScrollTrigger.getAll().forEach(trigger => {
+                    const triggerElement = trigger.vars && trigger.vars.trigger;
+                    if (triggerElement && triggerElement.closest && triggerElement.closest('.m-cards')) {
+                        trigger.kill();
+                    }
+                });
+            }
+            // Reinitialize
+            initMarqueeAnimation();
+            ScrollTrigger.refresh();
+        }, 250);
+    });
     
     // Final refresh to ensure everything is set up correctly
     setTimeout(() => {
