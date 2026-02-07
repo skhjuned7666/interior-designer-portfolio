@@ -1239,27 +1239,36 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             try {
-                // Simulate form submission (replace with actual API endpoint)
-                // For now, we'll use a mock submission
-                await new Promise(resolve => setTimeout(resolve, 1500));
+                // Using FormSubmit - Simplest email service (No signup, no API keys needed!)
+                // FormSubmit automatically handles form submission and sends email to skjuned7666@gmail.com
+                // Just submit the form normally - FormSubmit will handle the rest
+                
+                // Prepare form data for FormSubmit
+                const formData = new FormData();
+                formData.append('name', data.name);
+                formData.append('email', data.email);
+                formData.append('phone', data.phone || 'Not provided');
+                formData.append('subject', data.subject);
+                formData.append('message', data.message);
+                formData.append('_subject', 'New Contact Form Submission from H9Y Studio');
+                formData.append('_captcha', 'false');
+                formData.append('_template', 'box');
 
-                // In production, replace this with actual API call:
-                /*
-                const response = await fetch('/api/contact', {
+                // Submit form to FormSubmit
+                const response = await fetch('https://formsubmit.co/ajax/skjuned7666@gmail.com', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
+                    body: formData
                 });
 
-                if (!response.ok) {
-                    throw new Error('Submission failed');
-                }
-                */
+                const result = await response.json();
 
-                // Success
-                showFormMessage('Thank you! Your message has been sent successfully. We\'ll get back to you soon.', 'success');
+                // Check if email was sent successfully
+                if (result.success) {
+                    // Success
+                    showFormMessage('Thank you! Your message has been sent successfully. We\'ll get back to you soon.', 'success');
+                } else {
+                    throw new Error(result.message || 'Failed to send email');
+                }
                 
                 // Reset form
                 form.reset();
@@ -1283,7 +1292,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
             } catch (error) {
                 console.error('Form submission error:', error);
-                showFormMessage('Sorry, there was an error sending your message. Please try again later or contact us directly at harain.designoltre@gmail.com', 'error');
+                console.error('Error details:', {
+                    message: error.message,
+                    text: error.text,
+                    status: error.status
+                });
+
+                // Show specific error messages
+                let errorMessage = 'Sorry, there was an error sending your message. ';
+                
+                if (error.message && error.message.includes('credentials not configured')) {
+                    errorMessage = 'EmailJS is not configured yet. Please contact the website administrator.';
+                } else if (error.message && error.message.includes('library not loaded')) {
+                    errorMessage = 'Email service is not available. Please try again later.';
+                } else if (error.text) {
+                    errorMessage += 'Error: ' + error.text;
+                } else if (error.message) {
+                    errorMessage += error.message;
+                } else {
+                    errorMessage += 'Please try again later or contact us directly at skjuned7666@gmail.com';
+                }
+
+                showFormMessage(errorMessage, 'error');
             } finally {
                 setLoadingState(false);
             }
