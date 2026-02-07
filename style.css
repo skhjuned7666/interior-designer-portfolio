@@ -1432,6 +1432,44 @@ footer {
     position: relative;
 }
 
+/* Services page specific font overrides to ensure all text uses correct fonts */
+.section.services-intro,
+.section.services-intro *,
+.services-intro,
+.services-intro * {
+    font-family: 'Sora', sans-serif !important;
+}
+
+.section.services-intro h3,
+.services-intro h3 {
+    font-family: 'Sora', sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 300 !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+}
+
+.pin-section,
+.pin-section *,
+.content,
+.content * {
+    font-family: 'Sora', sans-serif;
+}
+
+.content ul.list,
+.content ul.list li {
+    font-family: 'Playfair Display', serif !important;
+}
+
+.service-slide-content h2 {
+    font-family: 'Playfair Display', serif !important;
+}
+
+.service-slide-content p,
+.service-features-list li {
+    font-family: 'Sora', sans-serif !important;
+}
+
 .services-intro {
     background: linear-gradient(135deg, var(--primary-dark) 0%, #1a2345 100%);
     position: relative;
@@ -1465,23 +1503,22 @@ footer {
     z-index: 1;
 }
 
+.section.services-intro h3,
 .services-intro h3 {
     position: relative;
     z-index: 2;
-}
-
-.services-intro h3 {
-    font-family: 'hehe', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 300;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    font-family: 'Sora', sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 300 !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
 }
 
 .pin-section {
     border-top: dashed 2px rgba(255, 255, 255, 0.2);
     border-bottom: dashed 2px rgba(255, 255, 255, 0.2);
     background: #f5f5f5;
+    font-family: 'Sora', sans-serif;
 }
 
 .services-pin {
@@ -1497,6 +1534,7 @@ footer {
     position: relative;
     align-items: center;
     min-height: 100vh;
+    font-family: 'Sora', sans-serif;
 }
 
 .content ul.list {
@@ -1507,12 +1545,13 @@ footer {
     padding-right: 60px;
     list-style: none;
     flex-grow: 0;
-    font-family: 'hehe', sans-serif;
-    font-weight: 500;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
     line-height: 1;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    letter-spacing: -0.5px;
 }
 
 .content ul.list li {
@@ -1570,20 +1609,23 @@ footer {
 }
 
 .service-slide-content h2 {
-    font-family: 'hehe', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #2f2f2f;
     margin: 0;
     line-height: 1.2;
+    letter-spacing: -0.5px;
 }
 
 .service-slide-content p {
+    font-family: 'Sora', sans-serif;
     font-size: 1.1rem;
     color: #666;
     line-height: 1.7;
     margin: 0;
     flex-shrink: 0;
+    font-weight: 300;
 }
 
 .service-features-list {
@@ -1596,11 +1638,12 @@ footer {
 }
 
 .service-features-list li {
+    font-family: 'Sora', sans-serif;
     font-size: 1rem;
     color: #2f2f2f;
     padding-left: 25px;
     position: relative;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .service-features-list li::before {
@@ -1640,17 +1683,21 @@ footer {
 }
 
 .services-cta-section .services-cta-content h2 {
-    font-family: 'hehe', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 3rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #2f2f2f;
     margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
 .services-cta-section .services-cta-content p {
+    font-family: 'Sora', sans-serif;
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 40px;
+    font-weight: 300;
+    line-height: 1.7;
 }
 
 /* Services - Process / How We Work */
@@ -1668,18 +1715,21 @@ footer {
 }
 
 .services-process-header h2 {
-    font-family: 'hehe', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 3rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 20px;
     color: #2f2f2f;
+    letter-spacing: -0.5px;
 }
 
 .services-process-header p {
+    font-family: 'Sora', sans-serif;
     font-size: 1.1rem;
     color: #666;
     max-width: 700px;
     line-height: 1.7;
+    font-weight: 300;
 }
 
 .services-process-steps {
@@ -1706,26 +1756,30 @@ footer {
 
 .process-step-number {
     display: inline-block;
-    font-family: 'nb', sans-serif;
+    font-family: 'Space Mono', monospace;
     font-size: 1.1rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #ff5f38;
     margin-bottom: 12px;
+    font-weight: 700;
 }
 
 .process-step h3 {
-    font-family: 'hehe', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 12px;
     color: #2f2f2f;
+    letter-spacing: -0.3px;
 }
 
 .process-step p {
+    font-family: 'Sora', sans-serif;
     font-size: 0.98rem;
     color: #666;
     line-height: 1.7;
+    font-weight: 300;
 }
 
 /* Services - FAQ */
@@ -1743,17 +1797,20 @@ footer {
 }
 
 .services-faq-header h2 {
-    font-family: 'hehe', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 2.8rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 16px;
     color: #2f2f2f;
+    letter-spacing: -0.5px;
 }
 
 .services-faq-header p {
+    font-family: 'Sora', sans-serif;
     font-size: 1.05rem;
     color: #777;
     max-width: 640px;
+    font-weight: 300;
     line-height: 1.7;
 }
 
@@ -1768,17 +1825,20 @@ footer {
 }
 
 .faq-item h3 {
-    font-family: 'hehe', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 8px;
     color: #2f2f2f;
+    letter-spacing: -0.2px;
 }
 
 .faq-item p {
+    font-family: 'Sora', sans-serif;
     font-size: 0.98rem;
     color: #666;
     line-height: 1.7;
+    font-weight: 300;
 }
 
 @media (max-width: 900px) {
@@ -1954,18 +2014,21 @@ footer {
 }
 
 .about-content-section h2 {
-    font-family: 'hehe', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #2f2f2f;
     margin-bottom: 40px;
+    letter-spacing: -0.5px;
 }
 
 .about-content-section p {
+    font-family: 'Sora', sans-serif;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     color: #666;
     line-height: 1.8;
+    font-weight: 300;
 }
 
 /* About Gallery Responsive */
@@ -2084,14 +2147,16 @@ footer {
 }
 
 .about-hero-title {
-    font-family: 'nb', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 6vw;
-    font-weight: 300;
+    font-weight: 700;
     margin-bottom: 30px;
     line-height: 1.1;
+    letter-spacing: -1px;
 }
 
 .about-hero-text {
+    font-family: 'Sora', sans-serif;
     font-size: 1.3rem;
     font-weight: 300;
     line-height: 1.8;
@@ -2109,12 +2174,13 @@ footer {
 }
 
 .section-title {
-    font-family: 'hehe', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #2f2f2f;
     text-align: center;
     margin-bottom: 60px;
+    letter-spacing: -0.5px;
 }
 
 .values-grid {
@@ -2135,25 +2201,28 @@ footer {
 }
 
 .value-icon {
-    font-family: 'nb', sans-serif;
+    font-family: 'Space Mono', monospace;
     font-size: 4rem;
-    font-weight: 300;
+    font-weight: 700;
     color: #ff5f38;
     margin-bottom: 20px;
 }
 
 .value-card h3 {
-    font-family: 'hehe', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #2f2f2f;
     margin-bottom: 15px;
+    letter-spacing: -0.3px;
 }
 
 .value-card p {
+    font-family: 'Sora', sans-serif;
     font-size: 1rem;
     color: #666;
-    line-height: 1.6;
+    line-height: 1.7;
+    font-weight: 300;
 }
 
 .about-timeline {
@@ -2199,9 +2268,9 @@ footer {
 
 .timeline-year {
     position: relative;
-    font-family: 'nb', sans-serif;
+    font-family: 'Space Mono', monospace;
     font-size: 3rem;
-    font-weight: 300;
+    font-weight: 700;
     color: #ff5f38;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -2222,17 +2291,20 @@ footer {
 }
 
 .timeline-content h3 {
-    font-family: 'hehe', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #2f2f2f;
     margin-bottom: 10px;
+    letter-spacing: -0.3px;
 }
 
 .timeline-content p {
+    font-family: 'Sora', sans-serif;
     font-size: 1rem;
     color: #666;
-    line-height: 1.6;
+    line-height: 1.7;
+    font-weight: 300;
 }
 
 .timeline-content {
@@ -2431,14 +2503,16 @@ footer {
 }
 
 .contact-hero-title {
-    font-family: 'nb', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 6vw;
-    font-weight: 300;
+    font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.1;
+    letter-spacing: -1px;
 }
 
 .contact-hero-text {
+    font-family: 'Sora', sans-serif;
     font-size: 1.3rem;
     font-weight: 300;
     opacity: 0.9;
@@ -2461,11 +2535,12 @@ footer {
 
 .contact-form-section h2,
 .contact-info-section h2 {
-    font-family: 'hehe', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #2f2f2f;
     margin-bottom: 40px;
+    letter-spacing: -0.5px;
 }
 
 .contact-form {
@@ -2486,6 +2561,7 @@ footer {
 }
 
 .form-group label {
+    font-family: 'Sora', sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -2500,9 +2576,10 @@ footer {
     border: 2px solid #e0e0e0;
     border-radius: 8px;
     font-size: 1rem;
-    font-family: 'hehe', sans-serif;
+    font-family: 'Sora', sans-serif;
     transition: border-color 0.3s ease;
     background: #f8f8f8;
+    font-weight: 300;
 }
 
 .form-group input:focus,
@@ -2519,6 +2596,7 @@ footer {
     border: none;
     border-radius: 50px;
     font-size: 1.1rem;
+    font-family: 'Sora', sans-serif;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -2546,17 +2624,20 @@ footer {
 }
 
 .info-item h3 {
-    font-family: 'hehe', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     font-weight: 600;
     color: #2f2f2f;
     margin-bottom: 15px;
+    letter-spacing: -0.3px;
 }
 
 .info-item p {
+    font-family: 'Sora', sans-serif;
     font-size: 1rem;
     color: #666;
     line-height: 1.8;
+    font-weight: 300;
 }
 
 .social-links {
