@@ -54,30 +54,82 @@
           <div class="contact-container">
               <div class="contact-form-section">
                   <h2>Send Us a Message</h2>
-                  <form class="contact-form">
+                  <div class="form-message" id="formMessage" role="alert" aria-live="polite"></div>
+                  <form class="contact-form" id="contactForm" novalidate>
                       <div class="form-row">
                           <div class="form-group">
                               <label for="name">Name</label>
-                              <input type="text" id="name" name="name" required>
+                              <input 
+                                  type="text" 
+                                  id="name" 
+                                  name="name" 
+                                  placeholder="Your full name"
+                                  required
+                                  aria-required="true"
+                                  aria-describedby="name-error">
+                              <span class="error-message" id="name-error" role="alert"></span>
                           </div>
                           <div class="form-group">
                               <label for="email">Email</label>
-                              <input type="email" id="email" name="email" required>
+                              <input 
+                                  type="email" 
+                                  id="email" 
+                                  name="email" 
+                                  placeholder="your.email@example.com"
+                                  required
+                                  aria-required="true"
+                                  aria-describedby="email-error">
+                              <span class="error-message" id="email-error" role="alert"></span>
                           </div>
                       </div>
                       <div class="form-group">
-                          <label for="phone">Phone</label>
-                          <input type="tel" id="phone" name="phone">
+                          <label for="phone">Phone <span class="optional-text">(Optional)</span></label>
+                          <input 
+                              type="tel" 
+                              id="phone" 
+                              name="phone" 
+                              placeholder="+1 (555) 123-4567"
+                              aria-describedby="phone-error">
+                          <span class="error-message" id="phone-error" role="alert"></span>
                       </div>
                       <div class="form-group">
                           <label for="subject">Subject</label>
-                          <input type="text" id="subject" name="subject" required>
+                          <input 
+                              type="text" 
+                              id="subject" 
+                              name="subject" 
+                              placeholder="What is this regarding?"
+                              required
+                              aria-required="true"
+                              aria-describedby="subject-error">
+                          <span class="error-message" id="subject-error" role="alert"></span>
                       </div>
                       <div class="form-group">
                           <label for="message">Message</label>
-                          <textarea id="message" name="message" rows="6" required></textarea>
+                          <textarea 
+                              id="message" 
+                              name="message" 
+                              rows="4" 
+                              placeholder="Tell us about your project..."
+                              required
+                              aria-required="true"
+                              aria-describedby="message-error message-counter"></textarea>
+                          <div class="textarea-footer">
+                              <span class="error-message" id="message-error" role="alert"></span>
+                              <span class="char-counter" id="message-counter">0 / 1000</span>
+                          </div>
                       </div>
-                      <button type="submit" class="submit-button">Send Message</button>
+                      <button type="submit" class="submit-button" id="submitButton">
+                          <span class="button-text">Send Message</span>
+                          <span class="button-loader" aria-hidden="true">
+                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                  <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="50.27" stroke-dashoffset="50.27">
+                                      <animate attributeName="stroke-dasharray" dur="1.5s" values="0 50.27;25.13 25.13;0 50.27;0 50.27" repeatCount="indefinite"/>
+                                      <animate attributeName="stroke-dashoffset" dur="1.5s" values="0;-25.13;-50.27;-50.27" repeatCount="indefinite"/>
+                                  </circle>
+                              </svg>
+                          </span>
+                      </button>
                   </form>
               </div>
 
@@ -105,22 +157,19 @@
           </div>
       </section>
 
+      <!-- Footer -->
       <footer>
           <div class="footer-top">
-              <!-- Left -->
               <div>
                   <h1 class="footer-heading">Do it once. Do it right.</h1>
-
                   <div class="locations">
                       San Diego-USA<br />
                       Paris-France
                   </div>
-
                   <div class="business">
                       New Business:<br />
                       harain.designoltre@gmail.com
                   </div>
-
                   <div class="newsletter">
                       <label>Sign up for our newsletter (No spam)</label>
                       <div class="newsletter-input">
@@ -130,7 +179,6 @@
                   </div>
               </div>
 
-              <!-- Middle -->
               <nav class="footer-nav">
                   <a href="index.html">Home</a>
                   <a href="work.html">Work</a>
@@ -139,7 +187,6 @@
                   <a href="contact.html">Contact</a>
               </nav>
 
-              <!-- Right -->
               <div class="footer-social">
                   <a href="#">Instagram ↗</a>
                   <a href="#">LinkedIn ↗</a>
@@ -150,10 +197,9 @@
               </div>
           </div>
 
-          <!-- Oversized Brand Text -->
           <div class="footer-brand">H9Y Studio</div>
       </footer>
-        
+     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
