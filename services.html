@@ -506,7 +506,7 @@
                         start: "top 50%", // Section 50% visible hone par animation start
                         end: "top 10%",
                         toggleActions: "play none reverse none", // Forward play, reverse on scroll up
-                        markers: true, // Set to true for debugging
+                        markers: false, // Set to false to hide debug markers
                         onEnter: () => {
                             // Forward animation - cards slide in
                             gsap.to(processSteps, {
