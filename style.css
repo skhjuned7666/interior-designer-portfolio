@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @font-face {
     font-family: nb;
@@ -1863,12 +1863,12 @@ footer {
 .section.services-intro *,
 .services-intro,
 .services-intro * {
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .section.services-intro h3,
 .services-intro h3 {
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
     font-size: 1.5rem !important;
     font-weight: 300 !important;
     letter-spacing: 3px !important;
@@ -1879,21 +1879,21 @@ footer {
 .pin-section *,
 .content,
 .content * {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
 }
 
 .content ul.list,
 .content ul.list li {
-    font-family: 'Playfair Display', serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .service-slide-content h2 {
-    font-family: 'Playfair Display', serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .service-slide-content p,
 .service-features-list li {
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .services-intro {
@@ -1933,7 +1933,7 @@ footer {
 .services-intro h3 {
     position: relative;
     z-index: 2;
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
     font-size: 1.5rem !important;
     font-weight: 300 !important;
     letter-spacing: 3px !important;
@@ -1944,7 +1944,7 @@ footer {
     border-top: dashed 2px rgba(255, 255, 255, 0.2);
     border-bottom: dashed 2px rgba(255, 255, 255, 0.2);
     background: #f5f5f5;
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
 }
 
 .services-pin {
@@ -1973,7 +1973,7 @@ footer {
     position: relative;
     align-items: center;
     min-height: 100vh;
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
 }
 
 .content ul.list {
@@ -1984,7 +1984,7 @@ footer {
     padding-right: 60px;
     list-style: none;
     flex-grow: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-weight: 600;
     line-height: 1;
     display: flex;
@@ -2048,7 +2048,7 @@ footer {
 }
 
 .service-slide-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -2058,7 +2058,7 @@ footer {
 }
 
 .service-slide-content p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.1rem;
     color: #666;
     line-height: 1.7;
@@ -2077,7 +2077,7 @@ footer {
 }
 
 .service-features-list li {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     color: #2f2f2f;
     padding-left: 25px;
@@ -2122,7 +2122,7 @@ footer {
 }
 
 .services-cta-section .services-cta-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -2131,7 +2131,7 @@ footer {
 }
 
 .services-cta-section .services-cta-content p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 40px;
@@ -2177,7 +2177,7 @@ footer {
 }
 
 .services-process-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 24px;
@@ -2203,7 +2203,7 @@ footer {
 }
 
 .services-process-header p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     color: #666;
     max-width: 700px;
@@ -2318,7 +2318,7 @@ footer {
     justify-content: center;
     width: 48px;
     height: 48px;
-    font-family: 'Space Mono', monospace;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -2361,7 +2361,7 @@ footer {
 }
 
 .process-step h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 12px;
@@ -2376,7 +2376,7 @@ footer {
 }
 
 .process-step p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 0.95rem;
     color: #666;
     line-height: 1.7;
@@ -2483,7 +2483,7 @@ footer {
 }
 
 .services-faq-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.8rem;
     font-weight: 600;
     margin-bottom: 16px;
@@ -2492,7 +2492,7 @@ footer {
 }
 
 .services-faq-header p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.05rem;
     color: #777;
     max-width: 640px;
@@ -2511,7 +2511,7 @@ footer {
 }
 
 .faq-item h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 8px;
@@ -2520,7 +2520,7 @@ footer {
 }
 
 .faq-item p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 0.98rem;
     color: #666;
     line-height: 1.7;
@@ -2810,7 +2810,7 @@ footer {
 }
 
 .about-content-section h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -2819,7 +2819,7 @@ footer {
 }
 
 .about-content-section p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     color: #666;
@@ -2947,7 +2947,7 @@ footer {
 }
 
 .about-hero-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 6vw;
     font-weight: 700;
     margin-bottom: 30px;
@@ -2956,7 +2956,7 @@ footer {
 }
 
 .about-hero-text {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.3rem;
     font-weight: 300;
     line-height: 1.8;
@@ -2974,7 +2974,7 @@ footer {
 }
 
 .section-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -3001,7 +3001,7 @@ footer {
 }
 
 .value-icon {
-    font-family: 'Space Mono', monospace;
+    font-family: hehe, sans-serif;
     font-size: 4rem;
     font-weight: 700;
     color: #ff5f38;
@@ -3009,7 +3009,7 @@ footer {
 }
 
 .value-card h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -3018,7 +3018,7 @@ footer {
 }
 
 .value-card p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     color: #666;
     line-height: 1.7;
@@ -3172,7 +3172,7 @@ footer {
 
 .timeline-year {
     position: relative;
-    font-family: 'Space Mono', monospace;
+    font-family: hehe, sans-serif;
     font-size: 3rem;
     font-weight: 700;
     color: #ff5f38;
@@ -3195,7 +3195,7 @@ footer {
 }
 
 .timeline-content h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -3204,7 +3204,7 @@ footer {
 }
 
 .timeline-content p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     color: #666;
     line-height: 1.7;
@@ -3590,7 +3590,7 @@ footer {
 }
 
 .work-hero-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.5rem;
     color: var(--primary-light);
     margin-bottom: 0.3rem;
@@ -3632,8 +3632,8 @@ footer {
     animation: fadeInUp 0.8s var(--transition) 0.2s both;
 }
 
-.intro-text h2 {
-    font-family: 'Playfair Display', serif;
+.intro-text h1 {
+    font-family: hehe, sans-serif;
     font-size: 2.2rem;
     color: var(--text-primary);
     margin-bottom: 0.8rem;
@@ -3674,7 +3674,7 @@ footer {
 }
 
 .intro-feature h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.5rem;
     color: var(--text-primary);
     margin-bottom: 0.8rem;
@@ -3798,7 +3798,7 @@ footer {
 }
 
 .card-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
     color: #0f172a;
@@ -4033,7 +4033,7 @@ footer {
 }
 
 .portfolio-modal-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2rem;
     margin: 0;
     color: var(--text-primary);
@@ -4168,7 +4168,7 @@ footer {
 }
 
 .portfolio-modal-card h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.15rem;
     margin-bottom: 0.85rem;
     color: var(--text-primary);
@@ -4880,7 +4880,7 @@ footer {
 }
 
 .portfolio-info h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.8rem;
     margin: 1rem 0 1.5rem 0;
     color: var(--text-primary);
@@ -5015,7 +5015,7 @@ footer {
 .stat-item:nth-child(4) { animation-delay: 0.3s; }
 
 .stat-number {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3.1rem;
     margin-bottom: 0.6rem;
     font-weight: 700;
@@ -5083,7 +5083,7 @@ footer {
 }
 
 .cta-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.75rem;
     margin-bottom: 1rem;
     font-weight: 700;
@@ -5384,7 +5384,7 @@ footer {
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @font-face {
     font-family: nb;
@@ -7249,12 +7249,12 @@ footer {
 .section.services-intro *,
 .services-intro,
 .services-intro * {
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .section.services-intro h3,
 .services-intro h3 {
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
     font-size: 1.5rem !important;
     font-weight: 300 !important;
     letter-spacing: 3px !important;
@@ -7265,21 +7265,21 @@ footer {
 .pin-section *,
 .content,
 .content * {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
 }
 
 .content ul.list,
 .content ul.list li {
-    font-family: 'Playfair Display', serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .service-slide-content h2 {
-    font-family: 'Playfair Display', serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .service-slide-content p,
 .service-features-list li {
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .services-intro {
@@ -7319,7 +7319,7 @@ footer {
 .services-intro h3 {
     position: relative;
     z-index: 2;
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
     font-size: 1.5rem !important;
     font-weight: 300 !important;
     letter-spacing: 3px !important;
@@ -7330,7 +7330,7 @@ footer {
     border-top: dashed 2px rgba(255, 255, 255, 0.2);
     border-bottom: dashed 2px rgba(255, 255, 255, 0.2);
     background: #f5f5f5;
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
 }
 
 .services-pin {
@@ -7359,7 +7359,7 @@ footer {
     position: relative;
     align-items: center;
     min-height: 100vh;
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
 }
 
 .content ul.list {
@@ -7370,7 +7370,7 @@ footer {
     padding-right: 60px;
     list-style: none;
     flex-grow: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-weight: 600;
     line-height: 1;
     display: flex;
@@ -7434,7 +7434,7 @@ footer {
 }
 
 .service-slide-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -7444,7 +7444,7 @@ footer {
 }
 
 .service-slide-content p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.1rem;
     color: #666;
     line-height: 1.7;
@@ -7463,7 +7463,7 @@ footer {
 }
 
 .service-features-list li {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     color: #2f2f2f;
     padding-left: 25px;
@@ -7508,7 +7508,7 @@ footer {
 }
 
 .services-cta-section .services-cta-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -7517,7 +7517,7 @@ footer {
 }
 
 .services-cta-section .services-cta-content p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 40px;
@@ -7563,7 +7563,7 @@ footer {
 }
 
 .services-process-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 24px;
@@ -7589,7 +7589,7 @@ footer {
 }
 
 .services-process-header p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     color: #666;
     max-width: 700px;
@@ -7704,7 +7704,7 @@ footer {
     justify-content: center;
     width: 48px;
     height: 48px;
-    font-family: 'Space Mono', monospace;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -7747,7 +7747,7 @@ footer {
 }
 
 .process-step h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 12px;
@@ -7762,7 +7762,7 @@ footer {
 }
 
 .process-step p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 0.95rem;
     color: #666;
     line-height: 1.7;
@@ -7869,7 +7869,7 @@ footer {
 }
 
 .services-faq-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.8rem;
     font-weight: 600;
     margin-bottom: 16px;
@@ -7878,7 +7878,7 @@ footer {
 }
 
 .services-faq-header p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.05rem;
     color: #777;
     max-width: 640px;
@@ -7897,7 +7897,7 @@ footer {
 }
 
 .faq-item h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 8px;
@@ -7906,7 +7906,7 @@ footer {
 }
 
 .faq-item p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 0.98rem;
     color: #666;
     line-height: 1.7;
@@ -8196,7 +8196,7 @@ footer {
 }
 
 .about-content-section h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -8205,7 +8205,7 @@ footer {
 }
 
 .about-content-section p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     color: #666;
@@ -8333,7 +8333,7 @@ footer {
 }
 
 .about-hero-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 6vw;
     font-weight: 700;
     margin-bottom: 30px;
@@ -8342,7 +8342,7 @@ footer {
 }
 
 .about-hero-text {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.3rem;
     font-weight: 300;
     line-height: 1.8;
@@ -8360,7 +8360,7 @@ footer {
 }
 
 .section-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -8387,7 +8387,7 @@ footer {
 }
 
 .value-icon {
-    font-family: 'Space Mono', monospace;
+    font-family: hehe, sans-serif;
     font-size: 4rem;
     font-weight: 700;
     color: #ff5f38;
@@ -8395,7 +8395,7 @@ footer {
 }
 
 .value-card h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -8404,7 +8404,7 @@ footer {
 }
 
 .value-card p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     color: #666;
     line-height: 1.7;
@@ -8558,7 +8558,7 @@ footer {
 
 .timeline-year {
     position: relative;
-    font-family: 'Space Mono', monospace;
+    font-family: hehe, sans-serif;
     font-size: 3rem;
     font-weight: 700;
     color: #ff5f38;
@@ -8581,7 +8581,7 @@ footer {
 }
 
 .timeline-content h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -8590,7 +8590,7 @@ footer {
 }
 
 .timeline-content p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     color: #666;
     line-height: 1.7;
@@ -8977,7 +8977,7 @@ footer {
 }
 
 .work-hero-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.5rem;
     color: var(--primary-light);
     margin-bottom: 0.3rem;
@@ -9020,7 +9020,7 @@ footer {
 }
 
 .intro-text h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.2rem;
     color: var(--text-primary);
     margin-bottom: 0.8rem;
@@ -9061,7 +9061,7 @@ footer {
 }
 
 .intro-feature h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.5rem;
     color: var(--text-primary);
     margin-bottom: 0.8rem;
@@ -9185,7 +9185,7 @@ footer {
 }
 
 .card-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
     color: #0f172a;
@@ -9420,7 +9420,7 @@ footer {
 }
 
 .portfolio-modal-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2rem;
     margin: 0;
     color: var(--text-primary);
@@ -9555,7 +9555,7 @@ footer {
 }
 
 .portfolio-modal-card h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.15rem;
     margin-bottom: 0.85rem;
     color: var(--text-primary);
@@ -10267,7 +10267,7 @@ footer {
 }
 
 .portfolio-info h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.8rem;
     margin: 1rem 0 1.5rem 0;
     color: var(--text-primary);
@@ -10402,7 +10402,7 @@ footer {
 .stat-item:nth-child(4) { animation-delay: 0.3s; }
 
 .stat-number {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3.1rem;
     margin-bottom: 0.6rem;
     font-weight: 700;
@@ -10470,7 +10470,7 @@ footer {
 }
 
 .cta-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.75rem;
     margin-bottom: 1rem;
     font-weight: 700;
@@ -10771,7 +10771,7 @@ footer {
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @font-face {
     font-family: nb;
@@ -12636,12 +12636,12 @@ footer {
 .section.services-intro *,
 .services-intro,
 .services-intro * {
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .section.services-intro h3,
 .services-intro h3 {
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
     font-size: 1.5rem !important;
     font-weight: 300 !important;
     letter-spacing: 3px !important;
@@ -12652,21 +12652,21 @@ footer {
 .pin-section *,
 .content,
 .content * {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
 }
 
 .content ul.list,
 .content ul.list li {
-    font-family: 'Playfair Display', serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .service-slide-content h2 {
-    font-family: 'Playfair Display', serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .service-slide-content p,
 .service-features-list li {
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .services-intro {
@@ -12706,7 +12706,7 @@ footer {
 .services-intro h3 {
     position: relative;
     z-index: 2;
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
     font-size: 1.5rem !important;
     font-weight: 300 !important;
     letter-spacing: 3px !important;
@@ -12717,7 +12717,7 @@ footer {
     border-top: dashed 2px rgba(255, 255, 255, 0.2);
     border-bottom: dashed 2px rgba(255, 255, 255, 0.2);
     background: #f5f5f5;
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
 }
 
 .services-pin {
@@ -12746,7 +12746,7 @@ footer {
     position: relative;
     align-items: center;
     min-height: 100vh;
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
 }
 
 .content ul.list {
@@ -12757,7 +12757,7 @@ footer {
     padding-right: 60px;
     list-style: none;
     flex-grow: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-weight: 600;
     line-height: 1;
     display: flex;
@@ -12821,7 +12821,7 @@ footer {
 }
 
 .service-slide-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -12831,7 +12831,7 @@ footer {
 }
 
 .service-slide-content p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.1rem;
     color: #666;
     line-height: 1.7;
@@ -12850,7 +12850,7 @@ footer {
 }
 
 .service-features-list li {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     color: #2f2f2f;
     padding-left: 25px;
@@ -12895,7 +12895,7 @@ footer {
 }
 
 .services-cta-section .services-cta-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -12904,7 +12904,7 @@ footer {
 }
 
 .services-cta-section .services-cta-content p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 40px;
@@ -12950,7 +12950,7 @@ footer {
 }
 
 .services-process-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 24px;
@@ -12976,7 +12976,7 @@ footer {
 }
 
 .services-process-header p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     color: #666;
     max-width: 700px;
@@ -13091,7 +13091,7 @@ footer {
     justify-content: center;
     width: 48px;
     height: 48px;
-    font-family: 'Space Mono', monospace;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -13134,7 +13134,7 @@ footer {
 }
 
 .process-step h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 12px;
@@ -13149,7 +13149,7 @@ footer {
 }
 
 .process-step p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 0.95rem;
     color: #666;
     line-height: 1.7;
@@ -13256,7 +13256,7 @@ footer {
 }
 
 .services-faq-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.8rem;
     font-weight: 600;
     margin-bottom: 16px;
@@ -13265,7 +13265,7 @@ footer {
 }
 
 .services-faq-header p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.05rem;
     color: #777;
     max-width: 640px;
@@ -13284,7 +13284,7 @@ footer {
 }
 
 .faq-item h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 8px;
@@ -13293,7 +13293,7 @@ footer {
 }
 
 .faq-item p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 0.98rem;
     color: #666;
     line-height: 1.7;
@@ -13583,7 +13583,7 @@ footer {
 }
 
 .about-content-section h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -13592,7 +13592,7 @@ footer {
 }
 
 .about-content-section p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     color: #666;
@@ -13720,7 +13720,7 @@ footer {
 }
 
 .about-hero-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 6vw;
     font-weight: 700;
     margin-bottom: 30px;
@@ -13729,7 +13729,7 @@ footer {
 }
 
 .about-hero-text {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.3rem;
     font-weight: 300;
     line-height: 1.8;
@@ -13747,7 +13747,7 @@ footer {
 }
 
 .section-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -13774,7 +13774,7 @@ footer {
 }
 
 .value-icon {
-    font-family: 'Space Mono', monospace;
+    font-family: hehe, sans-serif;
     font-size: 4rem;
     font-weight: 700;
     color: #ff5f38;
@@ -13782,7 +13782,7 @@ footer {
 }
 
 .value-card h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -13791,7 +13791,7 @@ footer {
 }
 
 .value-card p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     color: #666;
     line-height: 1.7;
@@ -13945,7 +13945,7 @@ footer {
 
 .timeline-year {
     position: relative;
-    font-family: 'Space Mono', monospace;
+    font-family: hehe, sans-serif;
     font-size: 3rem;
     font-weight: 700;
     color: #ff5f38;
@@ -13968,7 +13968,7 @@ footer {
 }
 
 .timeline-content h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -13977,7 +13977,7 @@ footer {
 }
 
 .timeline-content p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     color: #666;
     line-height: 1.7;
@@ -14364,7 +14364,7 @@ footer {
 }
 
 .work-hero-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.5rem;
     color: var(--primary-light);
     margin-bottom: 0.3rem;
@@ -14407,7 +14407,7 @@ footer {
 }
 
 .intro-text h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.2rem;
     color: var(--text-primary);
     margin-bottom: 0.8rem;
@@ -14448,7 +14448,7 @@ footer {
 }
 
 .intro-feature h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.5rem;
     color: var(--text-primary);
     margin-bottom: 0.8rem;
@@ -14572,7 +14572,7 @@ footer {
 }
 
 .card-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
     color: #0f172a;
@@ -14807,7 +14807,7 @@ footer {
 }
 
 .portfolio-modal-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2rem;
     margin: 0;
     color: var(--text-primary);
@@ -14942,7 +14942,7 @@ footer {
 }
 
 .portfolio-modal-card h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.15rem;
     margin-bottom: 0.85rem;
     color: var(--text-primary);
@@ -15654,7 +15654,7 @@ footer {
 }
 
 .portfolio-info h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.8rem;
     margin: 1rem 0 1.5rem 0;
     color: var(--text-primary);
@@ -15789,7 +15789,7 @@ footer {
 .stat-item:nth-child(4) { animation-delay: 0.3s; }
 
 .stat-number {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3.1rem;
     margin-bottom: 0.6rem;
     font-weight: 700;
@@ -15857,7 +15857,7 @@ footer {
 }
 
 .cta-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.75rem;
     margin-bottom: 1rem;
     font-weight: 700;
@@ -16158,7 +16158,7 @@ footer {
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @font-face {
     font-family: nb;
@@ -18023,12 +18023,12 @@ footer {
 .section.services-intro *,
 .services-intro,
 .services-intro * {
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .section.services-intro h3,
 .services-intro h3 {
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
     font-size: 1.5rem !important;
     font-weight: 300 !important;
     letter-spacing: 3px !important;
@@ -18039,21 +18039,21 @@ footer {
 .pin-section *,
 .content,
 .content * {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
 }
 
 .content ul.list,
 .content ul.list li {
-    font-family: 'Playfair Display', serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .service-slide-content h2 {
-    font-family: 'Playfair Display', serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .service-slide-content p,
 .service-features-list li {
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .services-intro {
@@ -18093,7 +18093,7 @@ footer {
 .services-intro h3 {
     position: relative;
     z-index: 2;
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
     font-size: 1.5rem !important;
     font-weight: 300 !important;
     letter-spacing: 3px !important;
@@ -18104,7 +18104,7 @@ footer {
     border-top: dashed 2px rgba(255, 255, 255, 0.2);
     border-bottom: dashed 2px rgba(255, 255, 255, 0.2);
     background: #f5f5f5;
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
 }
 
 .services-pin {
@@ -18133,7 +18133,7 @@ footer {
     position: relative;
     align-items: center;
     min-height: 100vh;
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
 }
 
 .content ul.list {
@@ -18144,7 +18144,7 @@ footer {
     padding-right: 60px;
     list-style: none;
     flex-grow: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-weight: 600;
     line-height: 1;
     display: flex;
@@ -18208,7 +18208,7 @@ footer {
 }
 
 .service-slide-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -18218,7 +18218,7 @@ footer {
 }
 
 .service-slide-content p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.1rem;
     color: #666;
     line-height: 1.7;
@@ -18237,7 +18237,7 @@ footer {
 }
 
 .service-features-list li {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     color: #2f2f2f;
     padding-left: 25px;
@@ -18282,7 +18282,7 @@ footer {
 }
 
 .services-cta-section .services-cta-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -18291,7 +18291,7 @@ footer {
 }
 
 .services-cta-section .services-cta-content p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 40px;
@@ -18337,7 +18337,7 @@ footer {
 }
 
 .services-process-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 24px;
@@ -18363,7 +18363,7 @@ footer {
 }
 
 .services-process-header p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     color: #666;
     max-width: 700px;
@@ -18478,7 +18478,7 @@ footer {
     justify-content: center;
     width: 48px;
     height: 48px;
-    font-family: 'Space Mono', monospace;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -18521,7 +18521,7 @@ footer {
 }
 
 .process-step h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 12px;
@@ -18536,7 +18536,7 @@ footer {
 }
 
 .process-step p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 0.95rem;
     color: #666;
     line-height: 1.7;
@@ -18643,7 +18643,7 @@ footer {
 }
 
 .services-faq-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.8rem;
     font-weight: 600;
     margin-bottom: 16px;
@@ -18652,7 +18652,7 @@ footer {
 }
 
 .services-faq-header p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.05rem;
     color: #777;
     max-width: 640px;
@@ -18671,7 +18671,7 @@ footer {
 }
 
 .faq-item h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 8px;
@@ -18680,7 +18680,7 @@ footer {
 }
 
 .faq-item p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 0.98rem;
     color: #666;
     line-height: 1.7;
@@ -18970,7 +18970,7 @@ footer {
 }
 
 .about-content-section h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -18979,7 +18979,7 @@ footer {
 }
 
 .about-content-section p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     color: #666;
@@ -19107,7 +19107,7 @@ footer {
 }
 
 .about-hero-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 6vw;
     font-weight: 700;
     margin-bottom: 30px;
@@ -19116,7 +19116,7 @@ footer {
 }
 
 .about-hero-text {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.3rem;
     font-weight: 300;
     line-height: 1.8;
@@ -19134,7 +19134,7 @@ footer {
 }
 
 .section-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -19161,7 +19161,7 @@ footer {
 }
 
 .value-icon {
-    font-family: 'Space Mono', monospace;
+    font-family: hehe, sans-serif;
     font-size: 4rem;
     font-weight: 700;
     color: #ff5f38;
@@ -19169,7 +19169,7 @@ footer {
 }
 
 .value-card h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -19178,7 +19178,7 @@ footer {
 }
 
 .value-card p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     color: #666;
     line-height: 1.7;
@@ -19332,7 +19332,7 @@ footer {
 
 .timeline-year {
     position: relative;
-    font-family: 'Space Mono', monospace;
+    font-family: hehe, sans-serif;
     font-size: 3rem;
     font-weight: 700;
     color: #ff5f38;
@@ -19355,7 +19355,7 @@ footer {
 }
 
 .timeline-content h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -19364,7 +19364,7 @@ footer {
 }
 
 .timeline-content p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     color: #666;
     line-height: 1.7;
@@ -19751,7 +19751,7 @@ footer {
 }
 
 .work-hero-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.5rem;
     color: var(--primary-light);
     margin-bottom: 0.3rem;
@@ -19794,7 +19794,7 @@ footer {
 }
 
 .intro-text h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.2rem;
     color: var(--text-primary);
     margin-bottom: 0.8rem;
@@ -19835,7 +19835,7 @@ footer {
 }
 
 .intro-feature h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.5rem;
     color: var(--text-primary);
     margin-bottom: 0.8rem;
@@ -19959,7 +19959,7 @@ footer {
 }
 
 .card-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
     color: #0f172a;
@@ -20194,7 +20194,7 @@ footer {
 }
 
 .portfolio-modal-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2rem;
     margin: 0;
     color: var(--text-primary);
@@ -20329,7 +20329,7 @@ footer {
 }
 
 .portfolio-modal-card h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.15rem;
     margin-bottom: 0.85rem;
     color: var(--text-primary);
@@ -21041,7 +21041,7 @@ footer {
 }
 
 .portfolio-info h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.8rem;
     margin: 1rem 0 1.5rem 0;
     color: var(--text-primary);
@@ -21176,7 +21176,7 @@ footer {
 .stat-item:nth-child(4) { animation-delay: 0.3s; }
 
 .stat-number {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3.1rem;
     margin-bottom: 0.6rem;
     font-weight: 700;
@@ -21244,7 +21244,7 @@ footer {
 }
 
 .cta-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.75rem;
     margin-bottom: 1rem;
     font-weight: 700;
@@ -21545,7 +21545,7 @@ footer {
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @font-face {
     font-family: nb;
@@ -23410,12 +23410,12 @@ footer {
 .section.services-intro *,
 .services-intro,
 .services-intro * {
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .section.services-intro h3,
 .services-intro h3 {
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
     font-size: 1.5rem !important;
     font-weight: 300 !important;
     letter-spacing: 3px !important;
@@ -23426,21 +23426,21 @@ footer {
 .pin-section *,
 .content,
 .content * {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
 }
 
 .content ul.list,
 .content ul.list li {
-    font-family: 'Playfair Display', serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .service-slide-content h2 {
-    font-family: 'Playfair Display', serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .service-slide-content p,
 .service-features-list li {
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
 }
 
 .services-intro {
@@ -23480,7 +23480,7 @@ footer {
 .services-intro h3 {
     position: relative;
     z-index: 2;
-    font-family: 'Sora', sans-serif !important;
+    font-family: hehe, sans-serif !important;
     font-size: 1.5rem !important;
     font-weight: 300 !important;
     letter-spacing: 3px !important;
@@ -23491,7 +23491,7 @@ footer {
     border-top: dashed 2px rgba(255, 255, 255, 0.2);
     border-bottom: dashed 2px rgba(255, 255, 255, 0.2);
     background: #f5f5f5;
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
 }
 
 .services-pin {
@@ -23520,7 +23520,7 @@ footer {
     position: relative;
     align-items: center;
     min-height: 100vh;
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
 }
 
 .content ul.list {
@@ -23531,7 +23531,7 @@ footer {
     padding-right: 60px;
     list-style: none;
     flex-grow: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-weight: 600;
     line-height: 1;
     display: flex;
@@ -23595,7 +23595,7 @@ footer {
 }
 
 .service-slide-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -23605,7 +23605,7 @@ footer {
 }
 
 .service-slide-content p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.1rem;
     color: #666;
     line-height: 1.7;
@@ -23624,7 +23624,7 @@ footer {
 }
 
 .service-features-list li {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     color: #2f2f2f;
     padding-left: 25px;
@@ -23669,7 +23669,7 @@ footer {
 }
 
 .services-cta-section .services-cta-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -23678,7 +23678,7 @@ footer {
 }
 
 .services-cta-section .services-cta-content p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 40px;
@@ -23724,7 +23724,7 @@ footer {
 }
 
 .services-process-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 24px;
@@ -23750,7 +23750,7 @@ footer {
 }
 
 .services-process-header p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     color: #666;
     max-width: 700px;
@@ -23865,7 +23865,7 @@ footer {
     justify-content: center;
     width: 48px;
     height: 48px;
-    font-family: 'Space Mono', monospace;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -23908,7 +23908,7 @@ footer {
 }
 
 .process-step h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 12px;
@@ -23923,7 +23923,7 @@ footer {
 }
 
 .process-step p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 0.95rem;
     color: #666;
     line-height: 1.7;
@@ -24030,7 +24030,7 @@ footer {
 }
 
 .services-faq-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.8rem;
     font-weight: 600;
     margin-bottom: 16px;
@@ -24039,7 +24039,7 @@ footer {
 }
 
 .services-faq-header p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.05rem;
     color: #777;
     max-width: 640px;
@@ -24058,7 +24058,7 @@ footer {
 }
 
 .faq-item h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 8px;
@@ -24067,7 +24067,7 @@ footer {
 }
 
 .faq-item p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 0.98rem;
     color: #666;
     line-height: 1.7;
@@ -24357,7 +24357,7 @@ footer {
 }
 
 .about-content-section h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -24366,7 +24366,7 @@ footer {
 }
 
 .about-content-section p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     color: #666;
@@ -24494,7 +24494,7 @@ footer {
 }
 
 .about-hero-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 6vw;
     font-weight: 700;
     margin-bottom: 30px;
@@ -24503,7 +24503,7 @@ footer {
 }
 
 .about-hero-text {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1.3rem;
     font-weight: 300;
     line-height: 1.8;
@@ -24521,7 +24521,7 @@ footer {
 }
 
 .section-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -24548,7 +24548,7 @@ footer {
 }
 
 .value-icon {
-    font-family: 'Space Mono', monospace;
+    font-family: hehe, sans-serif;
     font-size: 4rem;
     font-weight: 700;
     color: #ff5f38;
@@ -24556,7 +24556,7 @@ footer {
 }
 
 .value-card h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -24565,7 +24565,7 @@ footer {
 }
 
 .value-card p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     color: #666;
     line-height: 1.7;
@@ -24719,7 +24719,7 @@ footer {
 
 .timeline-year {
     position: relative;
-    font-family: 'Space Mono', monospace;
+    font-family: hehe, sans-serif;
     font-size: 3rem;
     font-weight: 700;
     color: #ff5f38;
@@ -24742,7 +24742,7 @@ footer {
 }
 
 .timeline-content h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -24751,7 +24751,7 @@ footer {
 }
 
 .timeline-content p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     color: #666;
     line-height: 1.7;
@@ -25138,7 +25138,7 @@ footer {
 }
 
 .work-hero-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.5rem;
     color: var(--primary-light);
     margin-bottom: 0.3rem;
@@ -25181,7 +25181,7 @@ footer {
 }
 
 .intro-text h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.2rem;
     color: var(--text-primary);
     margin-bottom: 0.8rem;
@@ -25222,7 +25222,7 @@ footer {
 }
 
 .intro-feature h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.5rem;
     color: var(--text-primary);
     margin-bottom: 0.8rem;
@@ -25346,7 +25346,7 @@ footer {
 }
 
 .card-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
     color: #0f172a;
@@ -25581,7 +25581,7 @@ footer {
 }
 
 .portfolio-modal-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2rem;
     margin: 0;
     color: var(--text-primary);
@@ -25716,7 +25716,7 @@ footer {
 }
 
 .portfolio-modal-card h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.15rem;
     margin-bottom: 0.85rem;
     color: var(--text-primary);
@@ -26428,7 +26428,7 @@ footer {
 }
 
 .portfolio-info h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.8rem;
     margin: 1rem 0 1.5rem 0;
     color: var(--text-primary);
@@ -26563,7 +26563,7 @@ footer {
 .stat-item:nth-child(4) { animation-delay: 0.3s; }
 
 .stat-number {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 3.1rem;
     margin-bottom: 0.6rem;
     font-weight: 700;
@@ -26631,7 +26631,7 @@ footer {
 }
 
 .cta-content h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.75rem;
     margin-bottom: 1rem;
     font-weight: 700;
@@ -26980,7 +26980,7 @@ footer {
 }
 
 .contact-hero-title {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: clamp(2.5rem, 6vw, 5rem);
     font-weight: 700;
     margin-bottom: 30px;
@@ -26989,7 +26989,7 @@ footer {
 }
 
 .contact-hero-text {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: clamp(1rem, 2vw, 1.3rem);
     font-weight: 300;
     line-height: 1.8;
@@ -27029,7 +27029,7 @@ footer {
 }
 
 .contact-form-section h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -27042,7 +27042,7 @@ footer {
     padding: 16px 20px;
     border-radius: 8px;
     margin-bottom: 25px;
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 0.95rem;
     font-weight: 400;
     opacity: 0;
@@ -27092,7 +27092,7 @@ footer {
 }
 
 .form-group label {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 0.95rem;
     font-weight: 500;
     color: #2f2f2f;
@@ -27106,7 +27106,7 @@ footer {
 
 .contact-form input,
 .contact-form textarea {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     padding: 14px 18px;
     border: 2px solid #e3e3e3;
@@ -27139,7 +27139,7 @@ footer {
 .contact-form textarea {
     resize: vertical;
     min-height: 100px;
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     line-height: 1.6;
 }
 
@@ -27152,7 +27152,7 @@ footer {
 }
 
 .error-message {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 0.85rem;
     color: #dc3545;
     margin-top: 4px;
@@ -27168,7 +27168,7 @@ footer {
 }
 
 .char-counter {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 0.8rem;
     color: #999;
     font-weight: 300;
@@ -27184,7 +27184,7 @@ footer {
 
 /* Submit Button */
 .submit-button {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     font-weight: 600;
     padding: 16px 32px;
@@ -27246,7 +27246,7 @@ footer {
 }
 
 .contact-info-section h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -27262,7 +27262,7 @@ footer {
 }
 
 .info-item h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: hehe, sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
     color: #2f2f2f;
@@ -27271,7 +27271,7 @@ footer {
 }
 
 .info-item p {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     color: #666;
     line-height: 1.7;
@@ -27288,7 +27288,7 @@ footer {
 }
 
 .social-link {
-    font-family: 'Sora', sans-serif;
+    font-family: hehe, sans-serif;
     font-size: 1rem;
     font-weight: 500;
     color: #2f2f2f;
