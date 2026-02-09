@@ -3853,6 +3853,15 @@ footer {
     border-color: #111827;
 }
 
+/* Hide navbar when modal is open */
+#main-nav.modal-open {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
 /* Portfolio details modal */
 .portfolio-modal-backdrop {
     position: fixed;
@@ -3863,7 +3872,7 @@ footer {
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 2000;
+    z-index: 10000; /* Higher than navbar to ensure modal is on top */
     padding: 1.5rem;
 }
 
@@ -9240,6 +9249,15 @@ footer {
     border-color: #111827;
 }
 
+/* Hide navbar when modal is open */
+#main-nav.modal-open {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
 /* Portfolio details modal */
 .portfolio-modal-backdrop {
     position: fixed;
@@ -9250,7 +9268,7 @@ footer {
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 2000;
+    z-index: 10000; /* Higher than navbar to ensure modal is on top */
     padding: 1.5rem;
 }
 
@@ -14627,6 +14645,15 @@ footer {
     border-color: #111827;
 }
 
+/* Hide navbar when modal is open */
+#main-nav.modal-open {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
 /* Portfolio details modal */
 .portfolio-modal-backdrop {
     position: fixed;
@@ -14637,7 +14664,7 @@ footer {
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 2000;
+    z-index: 10000; /* Higher than navbar to ensure modal is on top */
     padding: 1.5rem;
 }
 
@@ -20014,6 +20041,15 @@ footer {
     border-color: #111827;
 }
 
+/* Hide navbar when modal is open */
+#main-nav.modal-open {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
 /* Portfolio details modal */
 .portfolio-modal-backdrop {
     position: fixed;
@@ -20024,7 +20060,7 @@ footer {
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 2000;
+    z-index: 10000; /* Higher than navbar to ensure modal is on top */
     padding: 1.5rem;
 }
 
@@ -25401,6 +25437,15 @@ footer {
     border-color: #111827;
 }
 
+/* Hide navbar when modal is open */
+#main-nav.modal-open {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
 /* Portfolio details modal */
 .portfolio-modal-backdrop {
     position: fixed;
@@ -25411,7 +25456,7 @@ footer {
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 2000;
+    z-index: 10000; /* Higher than navbar to ensure modal is on top */
     padding: 1.5rem;
 }
 

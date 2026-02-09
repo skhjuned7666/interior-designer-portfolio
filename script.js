@@ -760,11 +760,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
             modalBackdrop.classList.add('open');
             document.body.style.overflow = 'hidden';
+            // Hide navbar when modal opens
+            const mainNav = document.getElementById('main-nav');
+            if (mainNav) {
+                mainNav.classList.add('modal-open');
+            }
         }
 
         function closeModal() {
             modalBackdrop.classList.remove('open');
             document.body.style.overflow = '';
+            // Show navbar when modal closes
+            const mainNav = document.getElementById('main-nav');
+            if (mainNav) {
+                mainNav.classList.remove('modal-open');
+            }
         }
 
         cards.forEach(card => {
