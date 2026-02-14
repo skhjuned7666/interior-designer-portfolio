@@ -37,6 +37,13 @@
     font-weight: 500;
 }
 
+/* Hide Play Reel ball on tablet and smaller screens */
+@media (max-width: 1024px) {
+    #cursor {
+        display: none !important;
+    }
+}
+
 #page1 video {
     height: 100%;
     width: 100%;
@@ -105,7 +112,11 @@
 }
 
 #text-content {
+    margin: 0;
     padding: 0px 6vw 60px 6vw;
+    box-sizing: border-box;
+    overflow: visible;
+    min-height: 0;
 }
 
 #text-content h1 {
@@ -113,10 +124,13 @@
     font-weight: 500;
     color: #000;
     margin: 0;
+    padding: 0;
     font-size: 4.2vw;
     line-height: 1.02;
     letter-spacing: -0.5px;
     max-width: 92%;
+    box-sizing: border-box;
+    overflow: visible;
 }
 
 #text-content p {
@@ -129,13 +143,15 @@
 /* Responsive styles for #page2 - Tablet */
 @media (max-width: 1024px) {
     #page2 {
-        height: auto;
+        height: auto !important;
         min-height: 100vh;
-        padding: 4vw 3vw;
+        padding: 2.5vw 3vw 3rem;
+        overflow: visible;
+        display: block;
     }
     
     #page2 header {
-        padding: 15px 4vw;
+        padding: 10px 4vw 12px;
         flex-direction: row;
         gap: 2rem;
     }
@@ -149,31 +165,39 @@
     }
     
     .divider {
-        margin: 15px 4vw 20px 4vw;
+        margin: 8px 4vw 6px 4vw;
     }
     
     #text-content {
-        padding: 20px 4vw 40px 4vw;
+        margin: 0;
+        padding: 6px 4vw 2rem 4vw;
     }
     
     #text-content h1 {
+        margin: 0;
+        padding: 0;
         font-size: 5vw;
         max-width: 100%;
         line-height: 1.1;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
     }
 }
 
 /* Responsive styles for #page2 - Mobile */
 @media (max-width: 768px) {
     #page2 {
-        padding: 3vw 4vw;
+        height: auto !important;
+        padding: 2vw 4vw 2.5rem;
+        overflow: visible;
+        display: block;
     }
     
     #page2 header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
-        padding: 20px 4vw;
+        gap: 10px;
+        padding: 10px 4vw 12px;
     }
     
     #logo-section {
@@ -186,29 +210,37 @@
     }
     
     .divider {
-        margin: 20px 4vw 25px 4vw;
+        margin: 8px 4vw 4px 4vw;
     }
     
     #text-content {
-        padding: 25px 4vw 40px 4vw;
+        margin: 0;
+        padding: 4px 4vw 24px 4vw;
     }
     
     #text-content h1 {
+        margin: 0;
+        padding: 0;
         font-size: 6.5vw;
         line-height: 1.15;
         letter-spacing: -0.3px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
     }
 }
 
 /* Responsive styles for #page2 - Small Mobile */
 @media (max-width: 480px) {
     #page2 {
-        padding: 4vw 5vw;
+        height: auto !important;
+        padding: 2vw 5vw 2rem;
+        overflow: visible;
+        display: block;
     }
     
     #page2 header {
-        padding: 20px 5vw;
-        gap: 12px;
+        padding: 10px 5vw 12px;
+        gap: 8px;
     }
     
     #logo-section {
@@ -221,17 +253,22 @@
     }
     
     .divider {
-        margin: 20px 5vw 25px 5vw;
+        margin: 6px 5vw 4px 5vw;
     }
     
     #text-content {
-        padding: 25px 5vw 40px 5vw;
+        margin: 0;
+        padding: 4px 5vw 20px 5vw;
     }
     
     #text-content h1 {
+        margin: 0;
+        padding: 0;
         font-size: 7.5vw;
         line-height: 1.2;
         letter-spacing: -0.2px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
     }
 }
 
@@ -248,15 +285,24 @@
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 900px;
+    padding: 0 1rem;
 }
 
 .sticky-header h1{
     font-family: hehe;
+    font-weight: 500;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
     position: relative;
     text-align: center;
     will-change: transform, opacity;
     transform: translateY(40px);
     opacity: 0;
+    margin: 0;
 }
 
 .card-container{
@@ -335,11 +381,15 @@
         top: 0;
         left: 0;
         transform: none;
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
+        width: 100%;
+        padding: 0 1.5rem;
     }
     
     .sticky-header h1{
         opacity: 1;
+        font-size: clamp(1.75rem, 5.5vw, 3rem);
+        line-height: 1.2;
     }
     .card-container{
         width: 100%;
@@ -357,6 +407,34 @@
     #card-3,
     .card-back{
         transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .sticky {
+        padding: 3rem 1.5rem;
+    }
+    .sticky-header {
+        margin-bottom: 2.5rem;
+        padding: 0 1rem;
+    }
+    .sticky-header h1 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+        line-height: 1.25;
+    }
+}
+
+@media (max-width: 480px) {
+    .sticky {
+        padding: 2.5rem 1rem;
+    }
+    .sticky-header {
+        margin-bottom: 2rem;
+        padding: 0 0.75rem;
+    }
+    .sticky-header h1 {
+        font-size: clamp(1.35rem, 7vw, 2rem);
+        line-height: 1.3;
     }
 }
 
@@ -510,7 +588,7 @@
         flex-direction: column !important;
         overflow-x: hidden;
         overflow-y: visible;
-        gap: 10vh !important;
+        gap: 3rem !important;
         height: auto !important;
         min-height: auto !important;
     }
@@ -523,8 +601,8 @@
         position: relative !important;
         width: 100vw !important;
         min-width: 100vw !important;
-        height: 100vh !important;
-        min-height: 100vh;
+        height: auto !important;
+        min-height: auto !important;
         margin-top: 0 !important;
         padding: 2rem 1.5rem;
         display: flex;
@@ -608,13 +686,22 @@
 }
 
 @media (max-width: 768px) {
+    .m-cards {
+        gap: 2rem !important;
+    }
+    
     .m-card {
-        padding: 1.5rem 1rem;
+        padding: 1.25rem 1rem;
+    }
+    
+    .m-card-content {
+        gap: 1.25rem !important;
     }
     
     .m-card-img {
         height: 50vh;
-        min-height: 300px;
+        min-height: 280px;
+        max-height: 380px;
         border-radius: 15px !important;
     }
     
@@ -628,13 +715,22 @@
 }
 
 @media (max-width: 480px) {
+    .m-cards {
+        gap: 1.5rem !important;
+    }
+    
     .m-card {
-        padding: 1rem;
+        padding: 1rem 0.75rem;
+    }
+    
+    .m-card-content {
+        gap: 1rem !important;
     }
     
     .m-card-img {
-        height: 45vh;
-        min-height: 250px;
+        height: 42vh;
+        min-height: 220px;
+        max-height: 320px;
         border-radius: 12px !important;
     }
     
