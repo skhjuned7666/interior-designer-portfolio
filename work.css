@@ -335,158 +335,316 @@
 }
 
 /* ===========================
-   Stats & CTA
+   Stats & CTA (style.css – futuristic glass / neon look)
    =========================== */
 
+/* Override shared.css global section – keep height auto */
 .work-stats-panel {
-    padding: 4rem 0 3rem;
-    background: #ffffff;
-    border-top: 1px solid var(--border-subtle);
+    position: relative;
+    background: radial-gradient(circle at 0% 0%, #0f104e 0%, #050713 40%, #101a4f 100%, transparent 50%);
+    padding: 4.5rem 2rem 3.5rem;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.work-stats-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 0% 50%, rgba(89, 193, 255, 0.14) 0%, transparent 50%),
+        radial-gradient(circle at 100% 40%, rgba(212, 165, 116, 0.18) 0%, transparent 55%);
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .stats-container {
-    max-width: 900px;
-    margin: 0 auto 2rem;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.5rem;
-    text-align: center;
+    gap: 1.75rem;
+    max-width: 1200px;
+    margin: 0 auto 2.5rem;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .stat-item {
-    padding: 1rem 0.5rem;
+    position: relative;
+    text-align: center;
+    padding: 1.75rem 1.25rem;
+    border-radius: 20px;
+    background: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.06) 0%, rgba(9, 11, 35, 0.7) 45%, rgba(3, 4, 16, 0.95) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.65),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    overflow: hidden;
+    animation: fadeInUp 0.6s var(--transition);
+    transition: transform 0.4s var(--transition), box-shadow 0.4s var(--transition), border-color 0.4s ease;
 }
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(89, 193, 255, 0.48), rgba(212, 165, 116, 0.5));
+    opacity: 0;
+    mix-blend-mode: soft-light;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.85),
+        0 0 25px rgba(126, 199, 255, 0.35);
+    border-color: rgba(212, 165, 116, 0.7);
+}
+
+.stat-item:hover::before {
+    opacity: 1;
+}
+
+.stat-item:nth-child(1) { animation-delay: 0s; }
+.stat-item:nth-child(2) { animation-delay: 0.1s; }
+.stat-item:nth-child(3) { animation-delay: 0.2s; }
+.stat-item:nth-child(4) { animation-delay: 0.3s; }
 
 .stat-number {
     font-family: hehe, sans-serif;
-    font-size: 2.1rem;
+    font-size: 3.1rem;
+    margin-bottom: 0.6rem;
     font-weight: 700;
-    color: #111827;
-    margin-bottom: 0.25rem;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, #ffffff 0%, #e2f3ff 20%, #f6d6a6 55%, #ffefc7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow:
+        0 0 18px rgba(255, 255, 255, 0.32),
+        0 0 35px rgba(148, 210, 255, 0.35);
 }
 
 .stat-label {
-    font-size: 0.9rem;
-    color: #6b7280;
+    font-size: 0.88rem;
+    color: rgba(214, 224, 255, 0.85);
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    line-height: 1.6;
+    margin: 0;
 }
 
 .portfolio-button-container {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+    position: relative;
+    z-index: 2;
 }
 
 .portfolio-view-more-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    padding: 0.9rem 1.9rem;
-    border-radius: 999px;
-    background: #111827;
-    color: #f9fafb;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.1rem 2.5rem;
+    background: linear-gradient(135deg, var(--accent-gold) 0%, #c8955f 100%);
+    color: #fff;
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
     position: relative;
     overflow: hidden;
-    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35);
+    box-shadow: 0 4px 20px rgba(212, 165, 116, 0.3);
 }
 
 .portfolio-view-more-btn::before {
-    content: "";
+    content: '';
     position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.25), transparent 55%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
 }
 
 .portfolio-view-more-btn:hover::before {
-    opacity: 1;
+    width: 300px;
+    height: 300px;
 }
 
 .portfolio-view-more-btn span {
     position: relative;
+    z-index: 1;
 }
 
 .portfolio-view-more-btn svg {
     position: relative;
-    transform: translateX(0);
-    transition: transform 0.25s ease;
+    z-index: 1;
+    transition: transform 0.3s ease;
 }
 
 .portfolio-view-more-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(212, 165, 116, 0.5);
+    background: linear-gradient(135deg, #e0b080 0%, var(--accent-gold) 100%);
 }
 
 .portfolio-view-more-btn:hover svg {
-    transform: translateX(3px);
+    transform: translateX(4px);
 }
 
 .portfolio-view-more-btn:active {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(212, 165, 116, 0.4);
 }
 
+/* CTA Section – style.css glass / gradient look (no dark outer background) */
 .work-cta-panel {
-    padding: 4rem 0 5rem;
-    background: #0b1024;
-    color: #ffffff;
+    position: relative;
+    background: transparent;
+    padding: 4rem 2rem 5rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    min-height: 0;
+}
+
+.work-cta-panel::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(89, 193, 255, 0.8) 25%, rgba(212, 165, 116, 0.9) 75%, transparent 100%);
+    opacity: 0.6;
+    box-shadow: 0 0 30px rgba(126, 199, 255, 0.55);
+    pointer-events: none;
 }
 
 .cta-content {
-    max-width: 700px;
-    margin: 0 auto;
     text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 2.75rem 3.25rem 3.1rem;
+    max-width: 780px;
+    width: 100%;
+    border-radius: 26px;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(89, 193, 255, 0.35) 0%, transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(212, 165, 116, 0.45) 0%, transparent 55%),
+        linear-gradient(145deg, rgba(8, 11, 35, 0.98), rgba(4, 6, 21, 0.98));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+        0 26px 70px rgba(0, 0, 0, 0.9),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(26px);
+    -webkit-backdrop-filter: blur(26px);
+    animation: fadeInUp 0.8s var(--transition) 0.2s both;
 }
 
 .cta-content h2 {
     font-family: hehe, sans-serif;
-    font-size: 2.2rem;
-    margin-bottom: 0.6rem;
-    letter-spacing: -0.5px;
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, #ffffff 0%, #e2f3ff 30%, #ffe3ba 70%, #fff0cf 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .cta-content p {
-    font-size: 0.98rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1.4rem;
+    font-size: 1.1rem;
+    color: rgba(215, 225, 255, 0.86);
+    margin-bottom: 2.3rem;
+    font-weight: 300;
 }
 
 .cta-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.85rem 1.8rem;
-    border-radius: 999px;
-    background: #ff5f38;
-    color: #ffffff;
+    padding: 0.95rem 2.6rem;
+    background: radial-gradient(circle at 0% 0%, rgba(89, 193, 255, 0.6), rgba(212, 165, 116, 0.9));
+    color: #050713;
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.98rem;
+    transition: all 0.3s var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    border: none;
-    cursor: pointer;
     box-shadow:
-        0 12px 30px rgba(255, 95, 56, 0.45),
-        0 0 18px rgba(255, 95, 56, 0.65);
-    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+        0 18px 45px rgba(0, 0, 0, 0.85),
+        0 0 28px rgba(212, 165, 116, 0.7);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--primary-light);
+    z-index: -1;
+    transition: all 0.3s var(--transition);
 }
 
 .cta-button:hover {
+    color: var(--accent-gold);
     transform: translateY(-3px);
-    background: linear-gradient(135deg, #ff8a5c, #ff5f38);
+    box-shadow: 0 20px 40px rgba(212, 165, 116, 0.3);
 }
 
 /* ===========================
-   Portfolio Modal
+   Portfolio Modal (override shared.css globals inside modal)
    =========================== */
+
+/* Reset shared.css section & p inside modal so layout/colors don't break */
+.portfolio-modal section,
+.portfolio-modal .portfolio-modal-card {
+    height: auto;
+    min-height: 0;
+    padding: 1.75rem 1.6rem;
+    background: rgba(255, 255, 255, 0.98);
+    color: #111827;
+}
+
+.portfolio-modal p {
+    font-size: 0.98rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #374151;
+    margin: 0 0 0.5rem 0;
+}
+
+.portfolio-modal p:last-child {
+    margin-bottom: 0;
+}
 
 #main-nav.modal-open {
     opacity: 0;
@@ -755,6 +913,82 @@
     padding: 1.75rem 1.6rem;
 }
 
+.portfolio-modal-card h4 {
+    font-family: hehe, sans-serif;
+    font-size: 1.15rem;
+    margin-bottom: 0.85rem;
+    color: var(--text-primary);
+}
+
+/* About the Project card inside modal (style.css reference) */
+.portfolio-modal .about-project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-modal .about-project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(255, 95, 56, 0.08), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(89, 193, 255, 0.08), transparent 55%);
+    opacity: 1;
+}
+
+.portfolio-modal .about-project-card h4 {
+    position: relative;
+    font-size: 1.4rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.portfolio-modal .about-project-card p {
+    position: relative;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: #444;
+    max-width: 40rem;
+    margin-bottom: 0.9rem;
+}
+
+.portfolio-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+}
+
+.portfolio-gallery-grid img {
+    width: 100%;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.portfolio-amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.portfolio-amenity {
+    padding: 0.55rem 0.7rem;
+    border-radius: 12px;
+    background: #f8fafc;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.portfolio-amenity span {
+    font-size: 1rem;
+}
+
 .portfolio-contact-form {
     display: grid;
     grid-template-columns: 1fr;
@@ -900,6 +1134,15 @@
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+
+    .portfolio-modal-sections {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .portfolio-amenities-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -927,6 +1170,25 @@
         background: rgba(0, 0, 0, 0.7);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
+    }
+
+    .portfolio-modal {
+        max-height: calc(100vh - 60px);
+        border-radius: 20px 20px 0 0;
+    }
+
+    .portfolio-modal-layout {
+        padding: 1.5rem 1.25rem;
+        gap: 1.25rem;
+        max-height: calc(100vh - 60px);
+    }
+
+    .portfolio-modal-hero {
+        margin-bottom: 1.5rem;
+    }
+
+    .portfolio-hero-main {
+        min-height: 220px;
     }
 }
 
