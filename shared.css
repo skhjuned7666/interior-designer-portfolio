@@ -103,12 +103,9 @@ html,body{
     font-family: 'hehe', sans-serif;
     font-size: clamp(1rem, 1.4vw, 1.5rem);
     font-weight: 700;
-    background: linear-gradient(135deg, #162a11 0%, #2d4a1f 50%, #ff5f38 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ff5f38;
     letter-spacing: -0.02em;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .brand-accent {
@@ -132,10 +129,7 @@ html,body{
 }
 
 .nav-brand:hover .brand-text {
-    background: linear-gradient(135deg, #ff5f38 0%, #ffb38a 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ff8c5a;
 }
 
 /* Navigation Links */
