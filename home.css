@@ -468,15 +468,15 @@
     .sticky #card-3 .card-back { color: #fff; }
 
     .sticky #card-1 .card-back {
-        background: linear-gradient(160deg, #ebe5df 0%, #977e61 50%, #837667 100%);
+        background: linear-gradient(160deg, #e6e0d9 0%, #b5a798 50%, #d3cbbd 100%);
         border-color: rgba(45, 42, 38, 0.08);
     }
     .sticky #card-2 .card-back {
-        background: linear-gradient(160deg, #4a5568 0%, #11375a 50%, #48556d 100%);
+        background: linear-gradient(160deg, #c9d1dd 0%, #869aa8 50%, #b3babf 100%);
         border-color: rgba(255, 255, 255, 0.12);
     }
     .sticky #card-3 .card-back {
-        background: linear-gradient(160deg, #755555 0%, #290707 50%, #755555 100%);
+        background: linear-gradient(160deg, #d0b9b9 0%, #8b7676 50%, #d0b9b9 100%);
         border-color: rgba(255, 95, 56, 0.2);
     }
 
